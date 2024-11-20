@@ -1,0 +1,112 @@
+{
+    "products": {
+        "1": {
+            "name": "Nike Dunk Low",
+            "brand": "Nike",
+            "gender": "MEN",
+            "sizes": [
+                39,
+                40,
+                40.5,
+                41,
+                42,
+                43,
+                43.5,
+                45,
+                47
+            ],
+            "price": 249.99,
+            "colorway": "Dark Team Red",
+            "style": "FZ4616-600",
+            "info": "Channelling vintage style back onto the streets, the '80s basketball icon returns with classic details and collegiate-inspired colours. Its padded, low-cut collar lets you take your game anywhere—in comfort.",
+            "images": [],
+            "likes": []
+        },
+        "2": {
+            "name": "Nike Dunk Low",
+            "brand": "Nike",
+            "gender": "MEN",
+            "sizes": [
+                39,
+                40,
+                41,
+                42,
+                43,
+                43,
+                44,
+                46
+            ],
+            "price": 249.99,
+            "colorway": "Black/University Gold",
+            "style": "FZ4618-001",
+            "info": "The '80s basketball icon returns with classic details and throwback hoops flair. Channelling vintage style back onto the streets, its padded, low-cut collar lets you take your game anywhere—in comfort.",
+            "images": [],
+            "likes": []
+        },
+        "3": {
+            "name": "Nike SB Dunk Low",
+            "brand": "Nike",
+            "gender": "MEN",
+            "sizes": [
+                39,
+                40,
+                41,
+                43,
+                44,
+                47
+            ],
+            "price": 239.99,
+            "colorway": "White and Gum Light Brown",
+            "style": "CD2563-101",
+            "info": "The classic skate shoe that works on the board—and off. This premium take on the Dunk Low is crafted with crisp leather and a gum outsole, bringing a dash of allure every time you land a trick. Meanwhile, its airy textile tongue and Zoom Air cushioning underfoot keep you light on your feet even during the longest skate sessions. And that Swoosh—more contrast than a tuxedo. More daring, too.",
+            "images": [],
+            "likes": []
+        },
+        "4": {
+            "name": "Nike Air Max Dn SE",
+            "brand": "Nike",
+            "gender": "MEN",
+            "sizes": [
+                39,
+                40,
+                42,
+                42.5,
+                43,
+                44,
+                44.5,
+                45,
+                46,
+                47
+            ],
+            "price": 349.99,
+            "colorway": "Laser Orange/Black/Total Orange/Comet Red",
+            "style": "HM0810-800",
+            "info": "Say hello to the next generation of Air technology. The Air Max Dn features our Dynamic Air unit system of dual-pressure tubes, creating a reactive sensation with every step. This results in a futuristic design that's comfortable enough to wear from day to night. Go ahead—Feel The Unreal.",
+            "images": [],
+            "likes": []
+        },
+        "5": {
+            "name": "Nike Air Max Dn",
+            "brand": "Nike",
+            "gender": "MEN",
+            "sizes": [
+                39,
+                40,
+                41,
+                42.5,
+                43,
+                44,
+                44.5,
+                45,
+                46,
+                47
+            ],
+            "price": 329.99,
+            "colorway": "White/Metallic Silver",
+            "style": "DV3337-101",
+            "info": "Say hello to the next generation of Air technology. The Air Max Dn features our Dynamic Air unit system of dual-pressure tubes, creating a reactive sensation with every step. This results in a futuristic design that's comfortable enough to wear from day to night. Go ahead—Feel The Unreal.",
+            "images": [],
+            "likes": []
+        }
+    }
+}
