@@ -1,4 +1,4 @@
-import { Schema } from "mongoose";
+import { Schema, model } from "mongoose";
 
 
 const productSchema = new Schema({
@@ -6,7 +6,7 @@ const productSchema = new Schema({
     brand: String,
     gender: String,
     sizes: {
-        type: Int32Array
+        type: Array
     },
     price: {
         type: Number,

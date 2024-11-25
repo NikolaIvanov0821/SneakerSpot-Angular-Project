@@ -2,7 +2,9 @@ import express from 'express';
 import mongoose from 'mongoose';
 
 import routes from './routes.js'
-import { corsMiddleware } from './middlewares/cors';
+import { corsMiddleware } from './middlewares/cors.js';
+
+console.log('It works!');
 
 try {
     await mongoose.connect('mongodb://localhost:27017', { dbName: 'sneakerspot'})

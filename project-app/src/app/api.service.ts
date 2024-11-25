@@ -14,6 +14,11 @@ export class ApiService {
     getProducts() {
         const url = enviroment.apiUrl
 
-         return this.http.get(url + "/products")
+        return this.http.get(url + "/products")
+    }
+
+    createProduct(data: any) {
+        const url = enviroment.apiUrl;
+        return this.http.post(url + "/products", data)
     }
 }
