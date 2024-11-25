@@ -14,6 +14,6 @@ export class ApiService {
     getProducts() {
         const url = enviroment.apiUrl
 
-         return this.http.get(url + "/themes")
+         return this.http.get(url + "/products")
     }
 }
