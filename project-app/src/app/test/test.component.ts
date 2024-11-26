@@ -10,19 +10,11 @@ import { FormsModule, NgForm } from '@angular/forms';
   templateUrl: './test.component.html',
   styleUrl: './test.component.css'
 })
-export class TestComponent implements AfterViewInit {
+export class TestComponent {
 
   constructor(private api: ApiService) { }
 
   @ViewChild('f') form: NgForm | undefined;
-
-  ngAfterViewInit(): void {
-    // this.api.getProducts().subscribe((p) => {
-    //   console.log(p);
-    // })
-
-    console.dir(this.form)
-  }
 
   onSubmit() {
     const content = this.form?.value

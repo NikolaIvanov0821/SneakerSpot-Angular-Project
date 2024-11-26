@@ -14,11 +14,11 @@ export class ApiService {
     getProducts() {
         const url = enviroment.apiUrl
 
-        return this.http.get(url + "/products")
+        return this.http.get<Product[]>(url + "/products")
     }
 
     createProduct(data: any) {
         const url = enviroment.apiUrl;
-        return this.http.post(url + "/products", data)
+        return this.http.post<Product>(url + "/products", data)
     }
 }

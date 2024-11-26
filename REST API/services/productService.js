@@ -4,7 +4,7 @@ import querystring from "querystring";
 
 const productService = {
     create(productData) {
-        return Product.create({ productData });
+        return Product.create(productData);
     },
     
     getAll(filter = {}) {
