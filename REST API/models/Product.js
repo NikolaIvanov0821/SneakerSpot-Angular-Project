@@ -12,7 +12,7 @@ const productSchema = new Schema({
         type: String
     },
     sizes: {
-        type: String
+        type: Array
     },
     price: {
         type: Number,
@@ -27,11 +27,11 @@ const productSchema = new Schema({
     info: {
         type: String
     },
-    // images: {
-    //     type: Array,
-    //     min: 4
-    // },
-    // likes: Array
+    images: {
+        type: Array,
+        min: 4
+    },
+    likes: Array
 });
 
 const Product = model('Product', productSchema);

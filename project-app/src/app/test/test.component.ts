@@ -19,6 +19,9 @@ export class TestComponent {
   onSubmit() {
     const content = this.form?.value
     console.log(content);
+    console.log( typeof content.sizes.split(" "));
+    
+    content.sizes = content.sizes.split(" ")
 
     this.api.createProduct(content).subscribe((p) => {
       console.log(p);
