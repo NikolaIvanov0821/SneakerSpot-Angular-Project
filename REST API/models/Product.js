@@ -31,7 +31,12 @@ const productSchema = new Schema({
         type: Array,
         min: 4
     },
-    likes: Array
+    likes: {
+        type: Array
+    },
+    reviews: {
+        type: Array
+    }
 });
 
 const Product = model('Product', productSchema);
