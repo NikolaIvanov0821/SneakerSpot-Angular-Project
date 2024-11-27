@@ -3,10 +3,7 @@ import querystring from "querystring";
 
 
 const productService = {
-    create(productData) {
-        return Product.create(productData);
-    },
-    
+
     getAll(filter = {}) {
         const query = Product.find();
 
@@ -20,7 +17,20 @@ const productService = {
 
     getOne(productId) {
         return Product.findById(productId);
+    },
+
+    create(productData) {
+        return Product.create(productData);
+    },
+
+    update(productId, productData) {
+        return Product.findByIdAndUpdate(productId, productData)
+    },
+
+    delete(productId) {
+        return Product.findByIdAndDelete(productId);
     }
+
 }
 
 export default productService;
