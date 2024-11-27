@@ -14,7 +14,7 @@ const userSchema = new Schema({
     liked: {
         type: Array
     },
-    reviews: {
+    reviews: [{
         productCode: String,
         content: String,
         grade: {
@@ -22,13 +22,14 @@ const userSchema = new Schema({
             min: 0,
             max: 5
         }
-    }
+    }]
+
 });
 
-userSchema.pre('save', async function () {
-    const hash = await bcrypt.hash(this.password, 10);
-    this.password = hash
-});
+// userSchema.pre('save', async function () {
+//     const hash = await bcrypt.hash(this.password, 10);
+//     this.password = hash
+// });
 
 const User = model('User', userSchema)
 

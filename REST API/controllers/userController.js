@@ -3,7 +3,7 @@ import userService from "../services/userService.js";
 
 const userController = Router();
 
-userController.post('/register', async (req, res) => {
+userController.post('/register/', async (req, res) => {
     const { username, email, password } = req.body
 
     const result = await userService.register(username, email, password);
@@ -11,7 +11,7 @@ userController.post('/register', async (req, res) => {
     res.json(result);
 });
 
-userController.post('/login', async (req, res) => {
+userController.post('/login/', async (req, res) => {
     const { email, password } = req.body;
 
     const result = await userService.login(email, password);
