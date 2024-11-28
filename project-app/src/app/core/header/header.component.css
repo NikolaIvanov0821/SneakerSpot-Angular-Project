@@ -1,0 +1,27 @@
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: black;
+    color: white;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+nav > a {
+    padding: 15px;
+    font-size: 18px;
+}
+
+img {
+    width: 300px;
+    height: 150px;
+}
+
+.user-and-checkout > i {
+    margin: 0px 10px;
+}

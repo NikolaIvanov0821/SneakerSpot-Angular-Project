@@ -5,18 +5,18 @@ import User from "../models/User.js";
 
 const userService = {
     async register(username, email, password) {
-        const user = await User.findOne(email);
+        const user = await User.findOne({ email });
 
         if (user) {
             throw new Error('User already exists');
         }
 
-        const createdUser = await User.create(username, email, password);
+        const createdUser = await User.create({ username, email, password});
 
         return generateResponse(createdUser);
     },
     async login(email, password) {
-        const user = await User.findOne(email);
+        const user = await User.findOne({email});
 
         if (!user) {
             throw new Error('Invalid user of password');
@@ -29,7 +29,7 @@ const userService = {
 
         return generateResponse(user);
     },
-    logout() {
+    async logout() {
         // TODO: Invalidate token
         
         return true;

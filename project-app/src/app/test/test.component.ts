@@ -16,16 +16,29 @@ export class TestComponent {
 
   @ViewChild('f') form: NgForm | undefined;
 
-  onSubmit() {
+  submitProduct() {
     const content = this.form?.value
     console.log(content);
     console.log( typeof content.sizes.split(" "));
     
     content.sizes = content.sizes.split(" ")
 
-    this.api.createProduct(content).subscribe((p) => {
-      console.log(p);
+    // this.api.createProduct(content).subscribe((p) => {
+    //   console.log(p);
+      
+    // })
+  }
+
+  @ViewChild('userForm') userForm: NgForm | undefined;
+
+  submitUser(){
+    const content = this.userForm?.value
+    console.log(content);
+
+    this.api.register(content).subscribe((req) => {
+      console.log(req);
       
     })
+    
   }
 }

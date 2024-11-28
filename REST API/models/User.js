@@ -2,15 +2,9 @@ import { Schema, model } from "mongoose";
 import bcrypt from "bcrypt";
 
 const userSchema = new Schema({
-    username: {
-        type: String
-    },
-    email: {
-        type: String
-    },
-    password: {
-        type: String
-    },
+    username: String,
+    email: String,
+    password: String,
     liked: {
         type: Array
     },
@@ -26,10 +20,11 @@ const userSchema = new Schema({
 
 });
 
-// userSchema.pre('save', async function () {
-//     const hash = await bcrypt.hash(this.password, 10);
-//     this.password = hash
-// });
+userSchema.pre('save', async function() {
+    const hash = await bcrypt.hash(this.password, 10)
+
+    this.password = hash
+});
 
 const User = model('User', userSchema)
 

@@ -17,8 +17,13 @@ export class ApiService {
         return this.http.get<Product[]>(url + "/products")
     }
 
-    createProduct(data: any) {
+    createProduct(data: Product) {
         const url = enviroment.apiUrl;
         return this.http.post<Product>(url + "/products", data)
+    }
+
+    register(data: any) {
+        const url = enviroment.apiUrl;
+        return this.http.post(url + '/users/register', data)
     }
 }
