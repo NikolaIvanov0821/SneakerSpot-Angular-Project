@@ -13,8 +13,8 @@ export class ApiService {
 
     getProducts() {
         const url = enviroment.apiUrl
-
-        return this.http.get<Product[]>(url + "/products")
+        const result = this.http.get<Product[]>(url + "/products")
+        return result
     }
 
     createProduct(data: Product) {
