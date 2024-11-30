@@ -1,0 +1,36 @@
+
+<div class="product-container">
+    <div class="product-gallery">
+      <div class="thumbnail-list">
+        <img
+          *ngFor="let image of productImages; let i = index"
+          src="{{image}}"
+          [alt]="'Thumbnail ' + (i + 1)"
+          (click)="selectImage(i)"
+          [class.selected]="i === selectedImageIndex"
+        />
+        
+      </div>
+      <div class="main-image">
+        <img src="{{productImages[selectedImageIndex]}}" alt="Selected Product Image" />
+      </div>
+    </div>
+  
+    <div class="product-details">
+      <h2>{{ product.name }}</h2>
+      <h3>{{ product.price | currency: "BGN" }}</h3>
+      <p>{{ product.info }}</p>
+      <p><strong>SKU:</strong> {{ product.style }}</p>
+  
+      <div class="size-selector">
+        <button
+          *ngFor="let size of product.sizes"
+          (click)="selectSize(size)"
+          [class.selected]="size === selectedSize"
+        >
+          {{ size }}
+        </button>
+      </div>
+      <button class="add-to-cart" (click)="addToCart()">Add to Cart</button>
+    </div>
+  </div>

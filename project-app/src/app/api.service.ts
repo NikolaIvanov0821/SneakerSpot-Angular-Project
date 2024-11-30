@@ -17,6 +17,12 @@ export class ApiService {
         return result
     }
 
+    getProduct(productId: string) {
+        const url = enviroment.apiUrl;
+        const result = this.http.get<Product>(url + "/products/" + productId)
+        return result
+    }
+
     createProduct(data: Product) {
         const url = enviroment.apiUrl;
         return this.http.post<Product>(url + "/products", data)

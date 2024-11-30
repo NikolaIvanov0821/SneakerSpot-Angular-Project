@@ -1,0 +1,105 @@
+.home-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
+.carousel-slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 100%;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 24px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.carousel-control.prev {
+    left: 10px;
+}
+
+.carousel-control.next {
+    right: 10px;
+}
+
+.highlights {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.highlights h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.highlight-items {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.highlight-item {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+}
+
+.highlight-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.highlight-item h3 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.highlight-item p {
+    color: #ffde00;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.highlight-item .btn {
+    display: inline-block;
+    background: #ffde00;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.highlight-item .btn:hover {
+    background: #ffde00;
+}

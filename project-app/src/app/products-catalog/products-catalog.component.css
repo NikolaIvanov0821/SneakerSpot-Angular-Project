@@ -1,0 +1,22 @@
+.catalog-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    margin: 10vh 20vw;
+    gap: 50px;
+}
+
+
+.lower-part {
+    display: flex;
+}
+
+.product-info > p {
+    max-width: 200px;
+}
+
+.product-image > img {
+    width: 400px;
+    height: 450px;
+}
+
+
