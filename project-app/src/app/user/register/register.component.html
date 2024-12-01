@@ -1,0 +1,99 @@
+<div>
+    <form (ngSubmit)="submitUser(registerForm)" #registerForm="ngForm">
+        <!-- username-->
+        @if (inputName.touched) {
+            <div class="input-error">
+                @if (inputName?.errors?.['required']) {
+                <p>Username is required!</p>
+            }
+            </div>
+        }
+
+        <div class="form-group">
+            <label for="username"><i class="fa-solid fa-user"></i>Username</label>
+            <input 
+            [class]="((inputName?.touched && inputName?.errors?.['required'])) ? 'input-error': ''" 
+            type="text"
+            class="form-control" 
+            id="username" 
+            name="username"
+            placeholder="ex. Ivan Ivanov" 
+            #inputName="ngModel"
+            required ngModel>
+        </div>
+
+        <!--phone number-->
+        <div class="form-group">
+            <label for="phone"><i class="fa-solid fa-phone"></i>Phone Number</label>
+            <select name="select-phone" id="select-phone" class="phone">
+                <option value="00359">+359</option>
+            </select>
+            <input type="text" class="form-control" id="phone" name="phone" placeholder="888 888 8888" ngModel>
+        </div>
+
+        <!--email-->
+        @if (inputEmail.touched) {
+            <div class="input-error">
+                @if (inputEmail?.errors?.['required']) {
+                <p>Email is required!</p>
+            }
+            </div>
+        }
+
+        <div class="form-group">
+            <label for="email"><i class="fa-solid fa-envelope"></i>Email</label>
+            <input
+                [class]="((inputEmail?.touched && inputEmail?.errors?.['required']) || 
+                (inputEmail?.touched && inputEmail?.errors?.['emailValidator'])) ? 'input-error' : ''"
+                type="text" 
+                class="form-control" 
+                id="email" 
+                name="email" 
+                placeholder="ivan@abv.bg" 
+                #inputEmail="ngModel"
+                email 
+                required ngModel>
+        </div>
+
+        <!--password-->
+        @if (inputPassword.touched) {
+            <div class="input-error">
+                @if (inputPassword?.errors?.['required']) {
+                <p>Password is required!</p>
+            }
+            </div>
+        }
+        <div class="form-group">
+            <label for="password"><i class="fa-solid fa-lock"></i>Password</label>
+            <input 
+            type="text" 
+            class="form-control" 
+            id="password" 
+            name="password" 
+            placeholder="******" 
+            #inputPassword="ngModel"
+            required ngModel>
+        </div>
+
+        <!--repassword-->
+        @if (inputRepassword.touched) {
+            <div class="input-error">
+                @if (inputRepassword?.errors?.['required']) {
+                <p>RePassword is required!</p>
+            }
+            </div>
+        }
+        <div class="form-group">
+            <label for="repassword"><i class="fa-solid fa-lock"></i>Re-password</label>
+            <input 
+            type="text" 
+            class="form-control" 
+            id="repassword"
+            name="repassword" 
+            placeholder="******" 
+            #inputRepassword="ngModel"
+            required ngModel>
+        </div>
+        <button>submit</button>
+    </form>
+</div>

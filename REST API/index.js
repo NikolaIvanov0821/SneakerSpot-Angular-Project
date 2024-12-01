@@ -8,7 +8,7 @@ import { authMiddleware } from './middlewares/auth.js';
 console.log('It works!');
 
 try {
-    await mongoose.connect('mongodb://localhost:27017', { dbName: 'sneakerspot'})
+    await mongoose.connect('mongodb+srv://niivanov2008:niivanov2008@cluster0.dehwi.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', { dbName: 'sneakerspot'})
     console.log('DB Connected!');
 } catch (error) {
     console.log('Cannot connect to DB!');

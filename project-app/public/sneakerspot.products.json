@@ -1,0 +1,839 @@
+[{
+  "_id": {
+    "$oid": "6745e587ceba93ab8cd18d4c"
+  },
+  "name": "Nike Dunk Low",
+  "brand": "Nike",
+  "gender": "Men",
+  "sizes": [
+    "39",
+    "40",
+    "40.5",
+    "41",
+    "42",
+    "43",
+    "43.5",
+    "44",
+    "46"
+  ],
+  "price": 249.99,
+  "colorway": "Obsidian/White/University Gold/University Blue",
+  "style": "FN7800-400",
+  "info": "Created for the hardwood but taken to the streets, this '80s b-ball icon returns with classic details and throwback hoops flair. The supple leather overlays help the Nike Dunk channel vintage style while its padded, low-cut collar lets you take your game anywhere—in comfort.",
+  "images": [
+    "FN7800-400-side1.png",
+    "FN7800-400-bottom.png",
+    "FN7800-400-side2.png",
+    "FN7800-400-up.png",
+    "FN7800-400-side3.png",
+    "FN7800-400-back.png"
+  ],
+  "likes": [],
+  "__v": 0,
+  "reviews": []
+},
+{
+  "_id": {
+    "$oid": "6745e75cceba93ab8cd18d51"
+  },
+  "name": "Nike Dunk Low",
+  "brand": "Nike",
+  "gender": "Men",
+  "sizes": [
+    "39",
+    "40",
+    "41",
+    "42",
+    "43",
+    "43.5",
+    "44",
+    "45",
+    "47"
+  ],
+  "price": 249.99,
+  "colorway": "Black/University Gold",
+  "style": "FZ4618-001",
+  "info": "The '80s basketball icon returns with classic details and throwback hoops flair. Channelling vintage style back onto the streets, its padded, low-cut collar lets you take your game anywhere—in comfort.",
+  "images": [
+    "FZ4618-001-side1.png",
+    "FZ4618-001-bottom.png",
+    "FZ4618-001-side2.png",
+    "FZ4618-001-up.png",
+    "FZ4618-001-side3.png",
+    "FZ4618-001-back.png"
+  ],
+  "likes": [],
+  "__v": 0,
+  "reviews": []
+},
+{
+  "_id": {
+    "$oid": "6745e7ebceba93ab8cd18d53"
+  },
+  "name": "Nike SB Dunk Low",
+  "brand": "Nike",
+  "gender": "Men",
+  "sizes": [
+    "39",
+    "40",
+    "41",
+    "42",
+    "43",
+    "43.5",
+    "44",
+    "45",
+    "47"
+  ],
+  "price": 239.99,
+  "colorway": "White and Gum Light Brown",
+  "style": "CD2563-101",
+  "info": "The classic skate shoe that works on the board—and off. This premium take on the Dunk Low is crafted with crisp leather and a gum outsole, bringing a dash of allure every time you land a trick. Meanwhile, its airy textile tongue and Zoom Air cushioning underfoot keep you light on your feet even during the longest skate sessions. And that Swoosh—more contrast than a tuxedo. More daring, too.",
+  "images": [
+    "CD2563-101-side1.jpg",
+    "CD2563-101-bottom.jpg",
+    "CD2563-101-side2.jpg",
+    "CD2563-101-up.jpg",
+    "CD2563-101-side3.jpg",
+    "CD2563-101-back.jpg"
+  ],
+  "likes": [],
+  "__v": 0,
+  "reviews": []
+},
+{
+  "_id": {
+    "$oid": "6745e8f2ceba93ab8cd18d55"
+  },
+  "name": "Nike SB Dunk Low",
+  "brand": "Nike",
+  "gender": "Men",
+  "sizes": [
+    "40",
+    "41",
+    "43",
+    "43.5",
+    "45",
+    "47"
+  ],
+  "price": 239.99,
+  "colorway": "Fir and Fire Red",
+  "style": " FZ1287-300",
+  "info": "This Nike SB Dunk Low pays tribute to Seattle's gone-but-not-forgotten professional hoops team—specifically the iconic jerseys they wore in the late '90s and early 2000s. It comes cloaked in Fir and Fire Red full-grain leather with Sail and University Gold accents. The Gum Light Brown outsole adds a touch of court-inspired class, while a padded tongue and collar work with Air Zoom cushioning to provide plush comfort through even your toughest skate sessions.",
+  "images": [
+    "FZ1287-300-side1.jpg",
+    "FZ1287-300-bottom.jpg",
+    "FZ1287-300-side2.jpg",
+    "FZ1287-300-up.jpg",
+    "FZ1287-300-side3.jpg",
+    "FZ1287-300-back.jpg"
+  ],
+  "likes": [],
+  "__v": 0,
+  "reviews": []
+},
+{
+  "_id": {
+    "$oid": "6745eb7cceba93ab8cd18d57"
+  },
+  "name": "Nike Air Max Dn SE",
+  "brand": "Nike",
+  "gender": "Men",
+  "sizes": [
+    "39",
+    "40",
+    "41",
+    "42",
+    "42.5",
+    "43",
+    "45",
+    "47"
+  ],
+  "price": 349.99,
+  "colorway": "Laser Orange/Comet Red",
+  "style": "HM0810-800",
+  "info": "Say hello to the next generation of Air technology. The Air Max Dn features our Dynamic Air unit system of dual-pressure tubes, creating a reactive sensation with every step. This results in a futuristic design that's comfortable enough to wear from day to night. Go ahead—Feel The Unreal.",
+  "images": [
+    "HM0810-800-side1.png",
+    "HM0810-800-bottom.png",
+    "HM0810-800-side2.png",
+    "HM0810-800-up.png",
+    "HM0810-800-side3.png",
+    "HM0810-800-back.png"
+  ],
+  "likes": [],
+  "__v": 0,
+  "reviews": []
+},
+{
+  "_id": {
+    "$oid": "6745ec34ceba93ab8cd18d59"
+  },
+  "name": "Nike Air Max Dn",
+  "brand": "Nike",
+  "gender": "Men",
+  "sizes": [
+    "39",
+    "40",
+    "41",
+    "42",
+    "42.5",
+    "43",
+    "45",
+    "47"
+  ],
+  "price": 329.99,
+  "colorway": "White/Metallic Silver",
+  "style": "DV3337-101",
+  "info": "Say hello to the next generation of Air technology. The Air Max Dn features our Dynamic Air unit system of dual-pressure tubes, creating a reactive sensation with every step. This results in a futuristic design that's comfortable enough to wear from day to night. Go ahead—Feel The Unreal.",
+  "images": [
+    "DV3337-101-side1.png",
+    "DV3337-101-bottom.png",
+    "DV3337-101-side2.png",
+    "DV3337-101-up.png",
+    "DV3337-101-side3.png",
+    "DV3337-101-back.png"
+  ],
+  "likes": [],
+  "__v": 0,
+  "reviews": []
+},
+{
+  "_id": {
+    "$oid": "6745ecd1ceba93ab8cd18d5b"
+  },
+  "name": "Nike Air Max 95 Essential",
+  "brand": "Nike",
+  "gender": "Men",
+  "sizes": [
+    "39",
+    "40",
+    "40.5",
+    "42",
+    "42.5",
+    "45",
+    "47",
+    "47.5"
+  ],
+  "price": 369.99,
+  "colorway": "Black/Dark Grey",
+  "style": "CI3705-001",
+  "info": "The Nike Air Max 95 Essential takes design cues from the human body. The midsole represents the spine, graduated panels are the muscles, the lace loops are the shoe's ribs and the mesh on the upper is the skin.",
+  "images": [
+    "CI3705-001-side1.png",
+    "CI3705-001-bottom.png",
+    "CI3705-001-side2.png",
+    "CI3705-001-up.png",
+    "CI3705-001-side3.png",
+    "CI3705-001-back.png"
+  ],
+  "likes": [],
+  "__v": 0,
+  "reviews": []
+},
+{
+  "_id": {
+    "$oid": "6745ed21ceba93ab8cd18d5d"
+  },
+  "name": "Nike Air Max 95 Essential",
+  "brand": "Nike",
+  "gender": "Men",
+  "sizes": [
+    "39",
+    "40",
+    "40.5",
+    "41",
+    "42",
+    "42.5",
+    "43",
+    "44",
+    "45",
+    "47"
+  ],
+  "price": 369.99,
+  "colorway": "White/Grey Fog",
+  "style": "CT1268-100",
+  "info": "Taking inspiration from the human body and running DNA, the Nike Air Max 95 Essential mixes unbelievable comfort with head-turning style. The iconic side panels represent muscles while visible Nike Air in the heel and forefoot cushions your every step.",
+  "images": [
+    "CT1268-100-side1.png",
+    "CT1268-100-botton.png",
+    "CT1268-100-side2.png",
+    "CT1268-100-up.png",
+    "CT1268-100-side3.png",
+    "CT1268-100-back.png"
+  ],
+  "likes": [],
+  "__v": 0,
+  "reviews": []
+},
+{
+  "_id": {
+    "$oid": "6745edd0ceba93ab8cd18d5f"
+  },
+  "name": "Nike Air Max 95",
+  "brand": "Nike",
+  "gender": "Men",
+  "sizes": [
+    "40",
+    "40.5",
+    "41",
+    "42",
+    "42.5",
+    "43",
+    "44",
+    "45",
+    "46"
+  ],
+  "price": 369.99,
+  "colorway": "Light Smoke Grey/Anthracite/Smoke Grey",
+  "style": "HQ3825-002",
+  "info": "Taking inspiration from the human body and '90s athletics aesthetics, the distinctive wavy design combines performance innovation with fast-paced style. This version pairs mixed materials and visible Max Air cushioning for a layered look with unbelievable comfort.",
+  "images": [
+    "HQ3825-002-side1.jpg",
+    "HQ3825-002-bottom.png",
+    "HQ3825-002-side2.png",
+    "HQ3825-002-up.jpg",
+    "HQ3825-002-side3.png",
+    "HQ3825-002-back.png"
+  ],
+  "likes": [],
+  "__v": 0,
+  "reviews": []
+},
+{
+  "_id": {
+    "$oid": "6745ee12ceba93ab8cd18d61"
+  },
+  "name": "Nike Air Max 95",
+  "brand": "Nike",
+  "gender": "Men",
+  "sizes": [
+    "40",
+    "40.5",
+    "41",
+    "42",
+    "42.5",
+    "43",
+    "44",
+    "45",
+    "46"
+  ],
+  "price": 369.99,
+  "colorway": "Sequoia/Cargo Khaki/Medium Olive",
+  "style": "HQ3825-300",
+  "info": "Taking inspiration from the human body and '90s athletics aesthetics, the distinctive wavy design combines performance innovation with fast-paced style. This version pairs mixed materials and visible Max Air cushioning for a layered look with unbelievable comfort.",
+  "images": [
+    "HQ3825-300-side1.jpg",
+    "HQ3825-300-bottom.png",
+    "HQ3825-300-side2.jpg",
+    "HQ3825-300-up.jpg",
+    "HQ3825-300-side3.jpg",
+    "HQ3825-300-back.png"
+  ],
+  "likes": [],
+  "__v": 0,
+  "reviews": []
+},
+{
+  "_id": {
+    "$oid": "6745ef60ceba93ab8cd18d63"
+  },
+  "name": "Nike Air Max Plus",
+  "brand": "Nike",
+  "gender": "Men",
+  "sizes": [
+    "40",
+    "40.5",
+    "41",
+    "42",
+    "42.5",
+    "43",
+    "44",
+    "45",
+    "46"
+  ],
+  "price": 369.99,
+  "colorway": "White/Black/Cool Grey",
+  "style": "604133-139",
+  "info": "Let your attitude have the edge in your Nike Air Max Plus, a Tuned Air experience that offers premium stability and unbelievable cushioning. Featuring the original's wavy design lines, TPU accents and airy mesh on the upper, it celebrates defiant style.",
+  "images": [
+    "604133-139-side1.png",
+    "604133-139-bottom.png",
+    "604133-139-side2.png",
+    "604133-139-up.jpg",
+    "604133-139-side3.png",
+    "604133-139-backv"
+  ],
+  "likes": [],
+  "__v": 0,
+  "reviews": []
+},
+{
+  "_id": {
+    "$oid": "6745efabceba93ab8cd18d65"
+  },
+  "name": "Nike Air Max Plus",
+  "brand": "Nike",
+  "gender": "Men",
+  "sizes": [
+    "40",
+    "40.5",
+    "44.5",
+    "45",
+    "46"
+  ],
+  "price": 389.99,
+  "colorway": "White/Midnight Navy/University Red/Metallic Gold",
+  "style": "FZ4776-100",
+  "info": "Let your attitude have the edge in the Air Max Plus. Its flame-like caging adds heat to the streets while airy mesh keeps you cool. And you get a tuned Nike Air experience that offers premium stability and unbelievable cushioning.",
+  "images": [
+    "FZ4776-100-side1.png",
+    "FZ4776-100-bottom.png",
+    "FZ4776-100-side2.png",
+    "FZ4776-100-up.png",
+    "FZ4776-100-side3.png",
+    "FZ4776-100-back.png"
+  ],
+  "likes": [],
+  "__v": 0,
+  "reviews": []
+},
+{
+  "_id": {
+    "$oid": "6745f04fceba93ab8cd18d67"
+  },
+  "name": "Nike Air Max 97",
+  "brand": "Nike",
+  "gender": "Men",
+  "sizes": [
+    "39",
+    "40",
+    "40.5",
+    "41",
+    "42",
+    "42.5",
+    "43",
+    "44.5",
+    "45",
+    "46"
+  ],
+  "price": 369.99,
+  "colorway": "White/Wolf Grey",
+  "style": "921826-101",
+  "info": "Featuring the original ripple design inspired by Japanese bullet trains, the Nike Air Max 97 lets you push your style full-speed ahead.Taking the revolutionary full-length Nike Air unit that shook up the running world and adding fresh colours and crisp details, it lets you ride in first-class comfort.",
+  "images": [
+    "921826-101-side1.png",
+    "921826-101-bottom.png",
+    "921826-101-side2.png",
+    "921826-101-up.png",
+    "921826-101-side3.jpg",
+    "921826-101-back.png"
+  ],
+  "likes": [],
+  "__v": 0,
+  "reviews": []
+},
+{
+  "_id": {
+    "$oid": "674b82c5dcca687ba19532ce"
+  },
+  "name": "Samba OG Shoes",
+  "brand": "Adidas Originals",
+  "gender": "Men",
+  "sizes": [
+    "39 1/3",
+    "40",
+    "40 2/3",
+    "41 1/3",
+    "42",
+    "42 2/3",
+    "43 1/3",
+    "44",
+    "44 2/3",
+    "45 1/3",
+    "46",
+    "46 2/3",
+    "47 1/3"
+  ],
+  "price": 239.99,
+  "colorway": "Cloud White / Core Black / gum",
+  "style": "B75806",
+  "info": "Born on the pitch, the Samba is a timeless icon of street style. This silhouette stays true to its legacy with a tasteful, low-profile, soft leather upper, suede overlays and gum sole, making it a staple in everyone's closet - on and off the pitch.",
+  "images": [
+    "B75806-side1.avif",
+    "B75806-bottom.avif",
+    "B75806-side2.avif",
+    "B75806-top.avif",
+    "B75806-side3.avif",
+    "B75806-back.avif"
+  ],
+  "likes": [],
+  "reviews": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "674b8606dcca687ba19532f3"
+  },
+  "name": "Samba OG Shoes",
+  "brand": "Adidas Originals",
+  "gender": "Men",
+  "sizes": [
+    "39 1/3",
+    "40",
+    "40 2/3",
+    "41 1/3",
+    "42",
+    "42 2/3",
+    "43 1/3",
+    "44",
+    "44 2/3",
+    "45 1/3",
+    "46",
+    "46 2/3",
+    "47 1/3"
+  ],
+  "price": 239.99,
+  "colorway": "Cloud White / Collegiate Green / Gum",
+  "style": "IE3437",
+  "info": "Whether heading to the pitch or the streets, the adidas Samba OG shoes keep your style on point. Their iconic gum sole and suede accents have propelled the Samba into fashion fame. Smooth leather envelops the foot in retro comfort as the serrated 3-Stripes add a flash of contrast. Reinforced toes stand up to the spontaneous kick-arounds, and the textile lining keeps things comfortable. From the archives but always looking ahead, the Samba OG continues redefining casual cool 70 years on.",
+  "images": [
+    "IE3437-side1.avif",
+    "IE3437-bottom.avif",
+    "IE3437-side2.avif",
+    "IE3437-top.avif",
+    "IE3437-side3.avif",
+    "IE3437-back.avif"
+  ],
+  "likes": [],
+  "reviews": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "674b86a1dcca687ba19532f5"
+  },
+  "name": "Samba OG Shoes",
+  "brand": "Adidas Originals",
+  "gender": "Men",
+  "sizes": [
+    "39 1/3",
+    "40",
+    "40 2/3",
+    "41 1/3",
+    "42",
+    "42 2/3",
+    "43 1/3",
+    "44",
+    "44 2/3",
+    "45 1/3",
+    "46",
+    "46 2/3",
+    "47 1/3"
+  ],
+  "price": 239.99,
+  "colorway": "Shadow Green / Cream White / Gold Metallic",
+  "style": "ID1483",
+  "info": "Inspired by the original indoor soccer training shoe, these Samba OG shoes still have it after more than 70 years. The leather upper, serrated 3-Stripes and reinforced toe stay true to the adidas original. Add in suede accents and heel patches, and you have a modern classic.",
+  "images": [
+    "ID1483-side1.avif",
+    "ID1483-bottom.avif",
+    "ID1483-side2.avif",
+    "ID1483-top.avif",
+    "ID1483-side3.avif",
+    "ID1483-back.avif"
+  ],
+  "likes": [],
+  "reviews": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "674b8805dcca687ba19532f7"
+  },
+  "name": "Gazelle Indoor Shoes",
+  "brand": "Adidas Originals",
+  "gender": "Men",
+  "sizes": [
+    "39 1/3",
+    "40",
+    "40 2/3",
+    "41 1/3",
+    "42",
+    "42 2/3",
+    "43 1/3",
+    "44",
+    "44 2/3",
+    "45 1/3",
+    "46",
+    "46 2/3",
+    "47 1/3"
+  ],
+  "price": 239.99,
+  "colorway": "Green / Cloud White / Hazy Green",
+  "style": "IE6605",
+  "info": "The Gazelle Indoor shoes are a modern take on a vintage legend. Originally used for soccer training, their iconic look has stood the test of time. The premium suede upper and gum rubber outsole keep you comfortable and stylish while the Trefoil and serrated 3-Stripes pay homage to adidas heritage.",
+  "images": [
+    "IE6605-side1.avif",
+    "IE6605-bottom.avif",
+    "IE6605-side2.avif",
+    "IE6605-top.avif",
+    "IE6605-side3.avif",
+    "IE6605-back.avif"
+  ],
+  "likes": [],
+  "reviews": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "674b895ddcca687ba19532fc"
+  },
+  "name": "Campus 00s Shoes",
+  "brand": "Adidas Originals",
+  "gender": "Men",
+  "sizes": [
+    "39 1/3",
+    "40",
+    "40 2/3",
+    "41 1/3",
+    "42",
+    "42 2/3",
+    "43 1/3",
+    "44",
+    "44 2/3",
+    "45 1/3",
+    "46",
+    "46 2/3",
+    "47 1/3"
+  ],
+  "price": 239.99,
+  "colorway": "Preloved Yellow / Core Black / Gold Metallic",
+  "style": "JI3308",
+  "info": "These adidas Campus 00s shoes are a modern take on an iconic style. Adding design details from early-2000s skate shoes, they have a suede upper and gum rubber outsole for a retro yet relevant look. Updated proportions and an oversized tongue keep things contemporary.",
+  "images": [
+    "JI3308-side1.avif",
+    "JI3308-bottom.avif",
+    "JI3308-side2.avif",
+    "JI3308-top.avif",
+    "JI3308-side3.avif",
+    "JI3308-back.avif"
+  ],
+  "likes": [],
+  "reviews": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "674b8a11dcca687ba19532fe"
+  },
+  "name": "Campus 00s Shoes",
+  "brand": "Adidas Originals",
+  "gender": "Men",
+  "sizes": [
+    "39 1/3",
+    "40",
+    "40 2/3",
+    "41 1/3",
+    "42",
+    "42 2/3",
+    "43 1/3",
+    "44",
+    "44 2/3",
+    "45 1/3",
+    "46",
+    "46 2/3",
+    "47 1/3"
+  ],
+  "price": 239.99,
+  "colorway": "Dark Green / Cloud White / Off White",
+  "style": "H03472",
+  "info": "These adidas shoes take the iconic elements of the Campus 80s and give them a next-gen, skateboarding-inspired twist. Known for its durability and the way it molds to your foot over time, suede helps provide longevity and solid footing. New collegiate colorblocking, graphics and branding create a fresh identity for the next generation to own and style.",
+  "images": [
+    "H03472-side1.avif",
+    "H03472-bottom.avif",
+    "H03472-side2.avif",
+    "H03472-top.avif",
+    "H03472-side3.avif",
+    "H03472-back.avif"
+  ],
+  "likes": [],
+  "reviews": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "674b8cb5dcca687ba1953303"
+  },
+  "name": "Campus 00s Shoes",
+  "brand": "Adidas Originals",
+  "gender": "Men",
+  "sizes": [
+    "39 1/3",
+    "40",
+    "40 2/3",
+    "41 1/3",
+    "42",
+    "42 2/3",
+    "43 1/3",
+    "44",
+    "44 2/3",
+    "45 1/3",
+    "46",
+    "46 2/3",
+    "47 1/3"
+  ],
+  "price": 239.99,
+  "colorway": "Grey Three / Cloud White / Off White",
+  "style": "HQ8707",
+  "info": "Although they made their debut on the hardwood, the adidas Campus shoes were quickly adopted just about everywhere else. With this pair, we move the iconic silhouette in another direction and add modern materials, colors and proportions. They're done with a premium leather upper lined with soft textile terry fabric, with all of it riding on an off-white midsole — a clear connect to the Campus legacy.",
+  "images": [
+    "HQ8707-side1.avif",
+    "HQ8707-bottom.avif",
+    "HQ8707-side2.avif",
+    "HQ8707-top.avif",
+    "HQ8707-side3.avif",
+    "HQ8707-back.avif"
+  ],
+  "likes": [],
+  "reviews": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "674b8e08dcca687ba1953305"
+  },
+  "name": "Stan Smith Shoes",
+  "brand": "Adidas Originals",
+  "gender": "Men",
+  "sizes": [
+    "39 1/3",
+    "40",
+    "40 2/3",
+    "41 1/3",
+    "42",
+    "42 2/3",
+    "43 1/3",
+    "44",
+    "44 2/3",
+    "45 1/3",
+    "46",
+    "46 2/3",
+    "47 1/3"
+  ],
+  "price": 239.99,
+  "colorway": "Cloud White / Core White / Green",
+  "style": "M20324",
+  "info": "Roll with the classic. Back in the day, Stan Smith won big on the tennis court. Slide into the adidas shoe worthy of his name and you'll win big on the streets. Top to bottom, these shoes capture the essential style of the 1971 original, with a minimalist build and clean trim.",
+  "images": [
+    "M20324-side1.avif",
+    "M20324-bottom.avif",
+    "M20324-side2.avif",
+    "M20324-top.avif",
+    "M20324-side3.avif",
+    "M20324-back.avif"
+  ],
+  "likes": [],
+  "reviews": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "674b9185dcca687ba1953308"
+  },
+  "name": "530",
+  "brand": "New Balance",
+  "gender": "Men",
+  "sizes": [
+    "39.t",
+    "40",
+    "40.5",
+    "41.t",
+    "42",
+    "43",
+    "44",
+    "44.5",
+    "45",
+    "46.5"
+  ],
+  "price": 249.99,
+  "colorway": "White with Natural Indigo",
+  "style": "MR530SG",
+  "info": "The original MR530 combined turn of the millennium aesthetics with the reliability of a high milage running shoe. The reintroduced 530 applies a contemporary, everyday style outlook to this performance-minded design. A segmented ABZORB midsole is paired with a classic mesh and synthetic overlay upper design, which utilizes sweeping curves and angles for a distinctive, high-tech look.",
+  "images": [
+    "MR530SG-side1.webp",
+    "MR530SG-side2.webp",
+    "MR530SG-top.webp",
+    "MR530SG-bottom.webp"
+  ],
+  "likes": [],
+  "reviews": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "674b9195dcca687ba195330a"
+  },
+  "name": "530",
+  "brand": "New Balance",
+  "gender": "Men",
+  "sizes": [
+    "39.5",
+    "40",
+    "40.5",
+    "41.5",
+    "42",
+    "43",
+    "44",
+    "44.5",
+    "45",
+    "46.5"
+  ],
+  "price": 249.99,
+  "colorway": "White with Natural Indigo",
+  "style": "MR530SG",
+  "info": "The original MR530 combined turn of the millennium aesthetics with the reliability of a high milage running shoe. The reintroduced 530 applies a contemporary, everyday style outlook to this performance-minded design. A segmented ABZORB midsole is paired with a classic mesh and synthetic overlay upper design, which utilizes sweeping curves and angles for a distinctive, high-tech look.",
+  "images": [
+    "MR530SG-side1.webp",
+    "MR530SG-side2.webp",
+    "MR530SG-top.webp",
+    "MR530SG-bottom.webp"
+  ],
+  "likes": [],
+  "reviews": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "674b924ddcca687ba195330c"
+  },
+  "name": "530",
+  "brand": "New Balance",
+  "gender": "Men",
+  "sizes": [
+    "39.5",
+    "40",
+    "40.5",
+    "41.5",
+    "42",
+    "43",
+    "44",
+    "44.5",
+    "45",
+    "46.5"
+  ],
+  "price": 249.99,
+  "colorway": "Sea Salt with White and Marsh Green",
+  "style": "MR530SX",
+  "info": "The original MR530 combined turn of the millennium aesthetics with the reliability of a high milage running shoe. The reintroduced 530 applies a contemporary, everyday style outlook to this performance-minded design. A segmented ABZORB midsole is paired with a classic mesh and synthetic overlay upper design, which utilizes sweeping curves and angles for a distinctive, high-tech look.",
+  "images": [
+    "MR530SX-side1.webp",
+    "MR530SX-bottom.webp",
+    "MR530SX-side2.webp",
+    "MR530SX-top.webp",
+    "MR530SX-side3.webp",
+    "MR530SX-back.webp"
+  ],
+  "likes": [],
+  "reviews": [],
+  "__v": 0
+}]
