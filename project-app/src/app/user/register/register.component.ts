@@ -2,6 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { ApiService } from '../../api.service';
 import { EmailDirective } from '../../directives/email.directive';
+import { User } from '../../types/user';
 
 @Component({
   selector: 'app-register',
@@ -13,11 +14,16 @@ import { EmailDirective } from '../../directives/email.directive';
 export class RegisterComponent {
   constructor(private api: ApiService) {}
 
-  submitUser(form: NgForm) {
+  register(form: NgForm) {
     if (form.invalid) {
       console.error('Invalid Login Form!');
       return;
     }
+    
+    const user = {
+      username: form.controls['username'].value
+    }
+    console.log(user);
     
   }
 }
