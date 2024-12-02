@@ -5,11 +5,11 @@ import User from "../models/User.js";
 
 const userService = {
     async register(username, phone, email, password) {
-        const user = await User.findOne({ email });
+        const user = await User.findOne({email});
 
         console.log(user);
 
-        const createdUser = await User.create({ username, phone, email, password});
+        const createdUser = await User.create({ username, phone, email, password });
 
         return generateResponse(createdUser);
     },

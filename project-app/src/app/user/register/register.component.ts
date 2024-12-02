@@ -63,7 +63,8 @@ export class RegisterComponent {
       passGroup: { password, rePassword} = {}     
     } = this.form.value;
 
-    this.userService.register(username!, email!, phone!, password!, rePassword!).subscribe(() => {
+    this.userService.register(username!, phone!, email!, password!, rePassword!).subscribe((res) => {
+      console.log(res);
       this.router.navigate(['/products']);
     })
   }

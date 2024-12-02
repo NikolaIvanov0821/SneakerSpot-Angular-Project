@@ -31,7 +31,7 @@
 
         <label for="email"><i class="fa-solid fa-envelope"></i>Email</label>
         <input [class]="(isFieldTextMissing('email')) ? 'error' : ''" type="text" id="email" name="email"
-            placeholder="ivan@abv.bg" email>
+            placeholder="ivan@abv.bg" formControlName="email" email>
 
         <!--password-->
         <div formGroupName="passGroup">

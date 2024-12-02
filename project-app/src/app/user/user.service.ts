@@ -33,8 +33,8 @@ export class UserService implements OnDestroy {
 
   register(
     username: string,
-    email: string,
     phone: string,
+    email: string,
     password: string,
     rePassword: string
   ) {
