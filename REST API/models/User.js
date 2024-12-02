@@ -3,20 +3,17 @@ import bcrypt from "bcrypt";
 
 const userSchema = new Schema({
     username: String,
+    phone: String,
     email: String,
     password: String,
     liked: {
         type: Array
     },
-    reviews: [{
-        productCode: String,
-        content: String,
-        grade: {
-            type: Number,
-            min: 0,
-            max: 5
-        }
-    }]
+    reviews: {
+        type: Array
+    },
+    createdAt: String,
+    updatedAt: String
 
 });
 

@@ -1,29 +1,70 @@
-import { Component, ViewChild } from '@angular/core';
-import { FormsModule, NgForm } from '@angular/forms';
-import { ApiService } from '../../api.service';
-import { EmailDirective } from '../../directives/email.directive';
-import { User } from '../../types/user';
+import { Component } from '@angular/core';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { matchPasswordsValidator } from '../../utils/password-match';
+import { UserService } from '../user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [FormsModule, EmailDirective],
+  imports: [FormsModule, ReactiveFormsModule],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })
 export class RegisterComponent {
-  constructor(private api: ApiService) {}
+  form = new FormGroup({
+    username: new FormControl('', [
+      Validators.required,
+      Validators.minLength(5),
+    ]),
+    email: new FormControl('', [Validators.required]),
+    phone: new FormControl(''),
+    passGroup: new FormGroup(
+      {
+        password: new FormControl('', [
+          Validators.required,
+          Validators.minLength(8),
+        ]),
+        rePassword: new FormControl('', [Validators.required]),
+      },
+      {
+        validators: [matchPasswordsValidator('password', 'rePassword')],
+      }
+    ),
+  });
 
-  register(form: NgForm) {
-    if (form.invalid) {
-      console.error('Invalid Login Form!');
-      return;
-    }
+  constructor(private userService: UserService, private router: Router) {}
+
+  isFieldTextMissing(controlName: string) {
+    return (
+      this.form.get(controlName)?.touched &&
+      this.form.get(controlName)?.errors?.['required']
+    );
+  }
+
+  get isNotMinLength() {
+    return (
+      this.form.get('username')?.touched &&
+      this.form.get('username')?.errors?.['minlength']
+    );
+  }
+  get passGroup() {
+    return this.form.get('passGroup');
+  }
+
+  register() {
+    console.log(this.form);
     
-    const user = {
-      username: form.controls['username'].value
-    }
-    console.log(user);
     
+    const {
+      username,
+      phone,
+      email,
+      passGroup: { password, rePassword} = {}     
+    } = this.form.value;
+
+    this.userService.register(username!, email!, phone!, password!, rePassword!).subscribe(() => {
+      this.router.navigate(['/products']);
+    })
   }
 }
