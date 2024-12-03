@@ -40,7 +40,7 @@ function generateResponse(user) {
         email: user.email,
     };
 
-    const token = jwt.sign(payload, 'MYSECRET', { expiresIn: '2h' });
+    const token = jwt.sign(payload, 'MYSECRET', { expiresIn: '2d' });
 
     return {
         _id: user._id,

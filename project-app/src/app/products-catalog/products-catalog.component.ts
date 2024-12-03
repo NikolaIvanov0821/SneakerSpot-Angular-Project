@@ -17,14 +17,17 @@ export class ProductsCatalogComponent implements OnInit {
   constructor(private api: ApiService) { }
 
   ngOnInit(): void {
-
     this.api.getProducts().subscribe((data) => {
       this.products = data;
       console.log(this.products);
     })
   }
 
-  onClick() {
-    
+  get isLoggedIn(): boolean {
+    let isLogged = false;
+    if (localStorage.getItem('user')) {
+      isLogged = true;
+    }
+    return isLogged;
   }
 }

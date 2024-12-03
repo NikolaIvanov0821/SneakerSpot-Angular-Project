@@ -5,11 +5,17 @@
         <a routerLink="/products">Products</a>
         <a routerLink="/about">About</a>
         <a routerLink="/contacts">Contacts</a>
+        @if (isLoggedIn) {
+        <a (click)="logout()">Logout</a>
+        }
+        @else {
         <a routerLink="/login">Login</a>
         <a routerLink="/register">Register</a>
+        }
+
     </nav>
     <div class="user-and-checkout">
-        <i class="fa-solid fa-user"></i>
+        <i class="fa-solid fa-user" routerLink="/profile"></i>
         <i class="fa-solid fa-cart-shopping"></i>
     </div>
     <!-- <ul class="dropdown-menu" *ngIf="isDropdownOpen">

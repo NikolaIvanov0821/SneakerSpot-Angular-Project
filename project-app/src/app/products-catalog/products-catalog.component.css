@@ -19,4 +19,14 @@
     height: 450px;
 }
 
+.product-image > div {
+    position: relative;
+    top: -450px;
+    left: 350px;
+}
+
+.product-image > div > i {
+    width: 75px;
+    height: 100%;
+}
 

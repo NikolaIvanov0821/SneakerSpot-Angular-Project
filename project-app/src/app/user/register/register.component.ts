@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { matchPasswordsValidator } from '../../utils/password-match';
 import { UserService } from '../user.service';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule],
+  imports: [RouterLink, ReactiveFormsModule],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })
@@ -53,6 +53,10 @@ export class RegisterComponent {
   }
 
   register() {
+
+    if (!this.form.valid) {
+      return
+    }
     console.log(this.form);
     
     
@@ -65,7 +69,8 @@ export class RegisterComponent {
 
     this.userService.register(username!, phone!, email!, password!, rePassword!).subscribe((res) => {
       console.log(res);
-      this.router.navigate(['/products']);
+      localStorage.setItem('user', JSON.stringify(res))
+      this.router.navigate(['/home']);
     })
   }
 }

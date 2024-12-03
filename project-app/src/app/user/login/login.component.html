@@ -1,1 +1,56 @@
-<p>login works!</p>
+<div class="form-container">
+
+    <h2>Login Form</h2>
+    <p>Login into your account to unlock the full experience of the site!</p>
+    <form (ngSubmit)="login()" class="login" [formGroup]="form">
+
+        <!--email-->
+        @if(form.get('email')?.touched){
+        <div>
+            @if(form.get('email')?.errors?.['required']){
+            <p class="error">Email is required!</p>
+            }
+        </div>
+        }
+
+        <label for="email"><i class="fa-solid fa-envelope"></i>Email</label>
+        <input [class]="(isFieldTextMissing('email')) ? 'error' : ''" type="text" id="email" name="email"
+            placeholder="ivan@abv.bg" formControlName="email" email>
+
+        <!--password-->
+
+        @if(form.get('password')?.touched){
+        <div>
+            @if(form.get('password')?.errors?.['required']){
+            <p class="error">Password is required!</p>
+            }
+            <!--  -->
+            @if(form.get('password')?.errors?.['minlength']){
+            <p class="error">Password must be at least 8 characters!</p>
+            }
+        </div>
+        }
+
+        <!-- password -->
+        <p class="password-input">
+            <label for="password"><span><i class="fas fa-lock"></i>Password</span></label>
+            <input [class]="(
+                  (form.get('password')?.touched &&
+                   form.get('password')?.errors?.['required'] ) ||
+                   (form.get('password')?.touched && 
+                   form.get('password')?.errors?.['minlength'])
+                ) ? 'error' : ''" type="password" name="password" id="password" placeholder="******"
+                formControlName="password" />
+        </p>
+
+
+        <button [disabled]="form.invalid">
+            Create Account
+        </button>
+
+        <p class="text-center">
+            Don't have an account?
+            <a routerLink="/register">Register</a>
+        </p>
+    </form>
+</div>

@@ -1,4 +1,7 @@
-<div>
+<div class="form-container">
+    <h2>Register Form</h2>
+    <p>Create an account to get full experience of the site!</p>
+
     <form (ngSubmit)="register()" class="register" [formGroup]="form">
         <!-- username-->
         @if(form.get('username')?.touched){
@@ -15,10 +18,13 @@
 
         <!--phone number-->
         <label for="phone"><i class="fa-solid fa-phone"></i>Phone Number</label>
-        <select name="select-phone" id="select-phone" class="phone">
-            <option value="00359">+359</option>
-        </select>
-        <input type="text" id="phone" name="phone" placeholder="888 888 8888" formControlName="phone">
+        <div class="phone-input">
+            <select name="select-phone" id="select-phone" class="phone">
+                <option value="00359">+359</option>
+            </select>
+            <input type="text" id="phone" name="phone" placeholder="888 888 8888" formControlName="phone">
+        </div>
+
 
         <!--email-->
         @if(form.get('email')?.touched){
@@ -48,8 +54,8 @@
             }
 
             <!-- password -->
-            <p class="field field-icon">
-                <label for="password"><span><i class="fas fa-lock"></i></span></label>
+            <p class="password-input">
+                <label for="password"><span><i class="fas fa-lock"></i>Password</span></label>
                 <input [class]="(
                   (passGroup?.get('password')?.touched &&
                    passGroup?.get('password')?.errors?.['required'] ) ||
@@ -69,8 +75,8 @@
             }
 
             <!-- rePassword -->
-            <p class="field field-icon">
-                <label for="rePassword"><span><i class="fas fa-lock"></i></span></label>
+            <p class="password-input">
+                <label for="rePassword"><span><i class="fas fa-lock"></i>Repassword</span></label>
                 <input [class]="(
                   (passGroup?.get('rePassword')?.touched &&
                   (passGroup?.get('rePassword')?.errors?.['required'] ||
@@ -80,16 +86,13 @@
             </p>
         </div>
 
-        <button
-        
-        [style]="{ backgroundColor: form.invalid ? 'grey' : '#234465' }"
-      >
-        Create Account
-      </button>
+        <button [disabled]="form.invalid">
+            Create Account
+        </button>
 
-      <p class="text-center">
-        Have an account?
-        <a routerLink="/login">Log In</a>
-      </p>
+        <p class="text-center">
+            Have an account?
+            <a routerLink="/login">Log In</a>
+        </p>
     </form>
 </div>
