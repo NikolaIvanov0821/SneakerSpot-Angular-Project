@@ -1,7 +1,7 @@
 .catalog-container {
     display: grid;
     grid-template-columns: auto auto auto;
-    margin: 10vh 20vw;
+    margin: 10vh 20vw auto 20vw;
     gap: 50px;
 }
 
@@ -19,14 +19,12 @@
     height: 450px;
 }
 
-.product-image > div {
-    position: relative;
-    top: -450px;
-    left: 350px;
+
+.middle-part {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 400px;
 }
 
-.product-image > div > i {
-    width: 75px;
-    height: 100%;
-}
 

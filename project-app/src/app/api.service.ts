@@ -2,14 +2,15 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Product } from "./types/product";
 import { enviroment } from "../enviroments/environment";
+import { runPostSignalSetFn } from "@angular/core/primitives/signals";
 
 
 @Injectable({
     providedIn: "root"
 })
 export class ApiService {
-    
-    constructor(private http: HttpClient) {}
+
+    constructor(private http: HttpClient) { }
 
     getProducts() {
         const url = enviroment.apiUrl
@@ -28,8 +29,9 @@ export class ApiService {
         return this.http.post<Product>(url + "/products", data)
     }
 
-    register(data: any) {
-        const url = enviroment.apiUrl;
-        return this.http.post(url + '/users/register', data)
+    likeProduct(productId: string, userId: string) {
+        const url = enviroment.apiUrl
+        const result = this.http.post(url + `/products/${productId}/likes`, { productId, userId })
+        return result
     }
 }

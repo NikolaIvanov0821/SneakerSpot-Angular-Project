@@ -3,6 +3,7 @@ import { ApiService } from '../api.service';
 import { Product } from '../types/product';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { User } from '../types/user';
 
 
 @Component({
@@ -29,5 +30,11 @@ export class ProductsCatalogComponent implements OnInit {
       isLogged = true;
     }
     return isLogged;
+  }
+
+  like(productId: string) {
+    const user = JSON.parse(localStorage.getItem('user') || '');
+
+    this.api.likeProduct(productId, user._id).subscribe((res) => {console.log(res)})
   }
 }

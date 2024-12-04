@@ -17,9 +17,9 @@ productController.post('/', async (req, res) => {
 
     try {
         const product = await productService.create(productData);
-        res.json(product)
+        res.json(product);
     } catch (error) {
-        res.status(400).json({ message: getErrorMessage(err) })
+        res.status(400).json({ message: getErrorMessage(err) });
     }
 });
 
@@ -31,14 +31,14 @@ productController.get('/:productId', async (req, res) => {
 
 productController.put('/:productId', async (req , res) => {
     const productData = req.body;
-    const productId = req.params.productId
+    const productId = req.params.productId;
 
     try {
         const updatedProduct = await productService.update(productId, productData);
 
-        res.json(updatedProduct)
+        res.json(updatedProduct);
     } catch (error) {
-        res.status(400).json({ message: getErrorMessage(error) })
+        res.status(400).json({ message: getErrorMessage(error) });
     }
 });
 
@@ -48,7 +48,23 @@ productController.delete('/:productId', async (req, res) => {
 
         res.status(204).end();
     } catch (error) {
-        res.status(400).json({ message: getErrorMessage(error) })
+        res.status(400).json({ message: getErrorMessage(error) });
+    }
+});
+
+productController.get('/:productId/likes', async (req, res) => {
+    const likes = req.body;
+    
+    res.json(likes)
+})
+
+productController.post('/:productId/likes', async (req, res) => {
+    try {
+        const { productId } = req.params;
+        const updatedLikes = await productService.likeProduct(productId, req.body.userId);
+        res.json(updatedLikes);
+    } catch (error) {
+        console.log(error);
     }
 });
 

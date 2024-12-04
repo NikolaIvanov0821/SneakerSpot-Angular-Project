@@ -6,11 +6,16 @@
         <div class="product-image">
             <img src="{{product.images[0]}}" alt="">
         </div>
-    	<h3>{{product.name}}</h3>
+        <div class="middle-part">
+            <h2>{{product.name}}</h2>
+            @if (isLoggedIn) {
+                <div><i class="fa-regular fa-heart fa-xl" (click)="like(product._id)"></i></div>
+            }
+        </div>
         <div class="lower-part">
             <div class="product-info">
                 <p>{{product.brand}}</p>
-                <div class="price">{{product.price | currency: "BGN"}}</div>
+                <h3 class="price">{{product.price | currency: "BGN"}}</h3>
             </div>
         </div>
     </div>

@@ -36,10 +36,10 @@ export class TestComponent {
     const content = this.userForm?.value
     console.log(content);
 
-    this.api.register(content).subscribe((req) => {
-      console.log(req);
+    // this.api.register(content).subscribe((req) => {
+    //   console.log(req);
       
-    })
+    // })
     
   }
 }
