@@ -32,20 +32,22 @@ const productService = {
     },
 
     async getLikes(productId) {
-        const likes = await fetch(`http://localhost:3030/products/${productId}/likes`)
+        const product = await Product.findById(productId)
+        console.log(product);
+        const likes = product.likes
+        console.log(likes);
         return likes
     },
 
     async likeProduct(productId, userId) {
-        const response = await fetch(`http://localhost:3030/products/${productId}/likes`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ userId })
-        });
+        const product = await Product.findById(productId); 
+        
+        if (!product.likes.includes(userId)) {
+            product.likes.push(userId); 
+            await product.save(); 
+        }
 
-        const likes = await response.json();
-        console.log(typeof likes, likes);
-        return likes;
+        return product.likes; 
     }
 }
 

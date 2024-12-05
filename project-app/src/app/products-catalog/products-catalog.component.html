@@ -8,8 +8,10 @@
         </div>
         <div class="middle-part">
             <h2>{{product.name}}</h2>
-            @if (isLoggedIn) {
+            @if (isLoggedIn && !isLiked(product._id)) {
                 <div><i class="fa-regular fa-heart fa-xl" (click)="like(product._id)"></i></div>
+            } @else if (isLoggedIn && isLiked(product._id)) {
+                <div><i class="fa-solid fa-heart fa-xl" (click)="unlike(product._id)"></i></div>
             }
         </div>
         <div class="lower-part">

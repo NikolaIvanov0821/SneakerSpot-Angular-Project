@@ -29,9 +29,21 @@ export class ApiService {
         return this.http.post<Product>(url + "/products", data)
     }
 
+    getLikes(productId: string) {
+        const url = enviroment.apiUrl
+        const result = this.http.get(url + `/products/${productId}/likes`)
+        return result
+    }
+
     likeProduct(productId: string, userId: string) {
         const url = enviroment.apiUrl
         const result = this.http.post(url + `/products/${productId}/likes`, { productId, userId })
+        return result
+    }
+
+    unlikeProduct(productId: string, userId: string) {
+        const url = enviroment.apiUrl
+        const result = this.http.put(url + `/products/${productId}/likes`, { productId, userId })
         return result
     }
 }

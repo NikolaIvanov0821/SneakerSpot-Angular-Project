@@ -22,6 +22,8 @@ export class ProductsCatalogComponent implements OnInit {
       this.products = data;
       console.log(this.products);
     })
+
+    
   }
 
   get isLoggedIn(): boolean {
@@ -32,9 +34,36 @@ export class ProductsCatalogComponent implements OnInit {
     return isLogged;
   }
 
-  like(productId: string) {
-    const user = JSON.parse(localStorage.getItem('user') || '');
+  isLiked(productId: string): boolean {
+    let isLiked = false
 
-    this.api.likeProduct(productId, user._id).subscribe((res) => {console.log(res)})
+    const user = JSON.parse(localStorage.getItem('user')!);
+    const userId = user._id;
+
+    this.api.getLikes(productId).subscribe((data) => {
+      if (data.hasOwnProperty(userId)) {
+        isLiked = true
+      }
+    })
+
+    return isLiked
+  }
+
+  like(productId: string) {
+    this.api.getLikes(productId).subscribe((data) => console.log(data))
+
+    const user = JSON.parse(localStorage.getItem('user')!);
+    const userId = user._id;
+
+    this.api.likeProduct(productId, userId).subscribe((updatedLikes) => {
+        console.log("Updated likes:", updatedLikes);
+    }, (error) => {
+        console.error("Error liking product:", error);
+    });
+  }
+
+  unlike(productId: string) {
+    const user = JSON.parse(localStorage.getItem('user')!);
+    const userId = user._id;
   }
 }

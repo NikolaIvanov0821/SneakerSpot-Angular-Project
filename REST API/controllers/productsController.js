@@ -53,7 +53,8 @@ productController.delete('/:productId', async (req, res) => {
 });
 
 productController.get('/:productId/likes', async (req, res) => {
-    const likes = req.body;
+    const productId = req.params.productId
+    const likes = await productService.getLikes(productId);
     
     res.json(likes)
 })
