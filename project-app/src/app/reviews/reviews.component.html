@@ -1,0 +1,65 @@
+<div class="reviews-container">
+
+    @if (isLoggedIn) {
+    <div class="review-form">
+        <h2>Create a Review</h2>
+        <form [formGroup]="form" (ngSubmit)="postReview()">
+            <div>
+                <label for="title">Title:</label>
+                <input id="title" formControlName="title" type="text" />
+                @if (form.get('title')?.touched && form.get('title')?.invalid) {
+                <div>
+                    @if (form.get('title')?.errors?.['required']) {
+                    <small class="error">Title is required.</small>
+                    }
+                </div>
+                }
+            </div>
+
+            <div>
+                <label for="rating">Rating:</label>
+                <input id="rating" formControlName="rating" type="number" min="0" max="5" />
+                @if (form.get('rating')?.touched && form.get('rating')?.invalid) {
+                <div>
+                    @if (form.get('rating')?.errors?.['required']) {
+                    <small class="error">Rating is required.</small>
+                    }
+                    @if (form.get('rating')?.errors?.['min']) {
+                    <small class="error">Minimum rating is 0.</small>
+                    }
+                    @if (form.get('rating')?.errors?.['max']) {
+                    <small class="error">Maximum rating is 5.</small>
+                    }
+                </div>
+                }
+
+            </div>
+
+            <div>
+                <label for="comment">Comment:</label>
+                <textarea id="comment" formControlName="comment"></textarea>
+                @if (form.get('comment')?.touched && form.get('comment')?.invalid) {
+                <div>
+                    @if (form.get('comment')?.errors?.['required']) {
+                    <small class="error">Comment is required.</small>
+                    }
+                </div>
+                }
+
+            </div>
+
+            <button type="submit" [disabled]="form.invalid">Submit</button>
+        </form>
+    </div>
+    }
+
+    <div class="reviews-list">
+        <h2>All Reviews</h2>
+        @for (review of reviews; track $index) {
+        <div class="review-item">
+            <h3>{{ review.title }} - {{ review.user }}</h3>
+            <p>{{ review.comment }}</p>
+        </div>
+        }
+    </div>
+</div>

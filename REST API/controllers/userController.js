@@ -46,4 +46,24 @@ userController.post('/:userId/liked', async (req, res) => {
     }
 });
 
+userController.put('/:userId/liked', async (req, res) => {
+    try {
+        const userId = req.params.userId;
+        const updatedLikes = await userService.unlikeProduct(userId, req.body.productId);
+        res.json(updatedLikes);
+    } catch (error) {
+        console.log(error);
+    }
+});
+
+userController.post('/:userId/reviews', async (req, res) => {
+    try {
+        const userId = req.params.userId;
+        const updatedReviews = await userService.addReview(userId, req.body);
+        res.json(updatedReviews)
+    } catch (error) {
+        console.log(error);
+    }
+});
+
 export default userController;

@@ -70,6 +70,11 @@ const productService = {
         }
 
         return product.reviews;
+    },
+
+    async getReviews(productId) {
+        const product = await Product.findById(productId);
+        return product.reviews;
     }
 }
 

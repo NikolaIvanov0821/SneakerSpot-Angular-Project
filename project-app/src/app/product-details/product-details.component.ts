@@ -4,10 +4,11 @@ import { ApiService } from '../api.service';
 import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { UserService } from '../user/user.service';
+import { ReviewsComponent } from '../reviews/reviews.component';
 
 @Component({
   selector: 'app-product-details',
-  imports: [CommonModule],
+  imports: [CommonModule, ReviewsComponent],
   templateUrl: './product-details.component.html',
   styleUrl: './product-details.component.css'
 })

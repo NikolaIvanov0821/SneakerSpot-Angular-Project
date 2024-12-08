@@ -11,3 +11,11 @@ export interface Product {
     "images": string[],
     "likes": string[]
 }
+
+export interface Review {
+    "user": string,
+    "title": string,
+    "productId": string,
+    "rating": number,
+    "comment": string
+}

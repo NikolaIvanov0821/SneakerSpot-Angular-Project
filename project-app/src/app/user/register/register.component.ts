@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { matchPasswordsValidator } from '../../utils/password-match';
 import { UserService } from '../user.service';
 import { Router, RouterLink } from '@angular/router';

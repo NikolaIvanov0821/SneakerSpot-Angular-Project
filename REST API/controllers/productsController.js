@@ -79,12 +79,25 @@ productController.put('/:productId/likes', async (req, res) => {
     }
 });
 
+productController.get('/:productId/reviews', async (req, res) => {
+    try {
+        const productId = req.params.productId;
+        const reviews = await productService.getReviews(productId);
+        res.json(reviews)
+    } catch (error) {
+        console.log(error);
+    }
+})
+
 productController.post('/:productId/reviews', async (req, res) => {
     try {
         const productId = req.params.productId;
-        const updatedReviews = await '';
+        const review = req.body;
+        const updatedReviews = await productService.postReview(productId, review);
+
+        res.json(updatedReviews)
     } catch (error) {
-        
+        console.log(error);
     }
 });
 

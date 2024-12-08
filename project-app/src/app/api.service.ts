@@ -1,6 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Product } from "./types/product";
+import { Product, Review } from "./types/product";
 import { enviroment } from "../enviroments/environment";
 import { runPostSignalSetFn } from "@angular/core/primitives/signals";
 
@@ -31,7 +31,7 @@ export class ApiService {
 
     getLikes(productId: string) {
         const url = enviroment.apiUrl;
-        const result = this.http.get(url + `/products/${productId}/likes`);
+        const result = this.http.get<[]>(url + `/products/${productId}/likes`);
         return result;
     }
 
@@ -44,6 +44,19 @@ export class ApiService {
     unlikeProduct(productId: string, userId: string) {
         const url = enviroment.apiUrl;
         const result = this.http.put(url + `/products/${productId}/likes`, { productId, userId });
+        return result;
+    }
+
+    postReview(user: string, title: string, productId: string, rating: number, comment: string) {
+        const url = enviroment.apiUrl;
+        const review: Review = { user, title, productId, rating, comment };
+        const result = this.http.post(url + `/products/${productId}/reviews`, review);
+        return result;
+    }
+
+    getReviews(productId: string) {
+        const url = enviroment.apiUrl;
+        const result = this.http.get<Review[]>(url + `/products/${productId}/reviews`);
         return result;
     }
 }

@@ -3,6 +3,7 @@ import { BehaviorSubject, Subscription, tap } from 'rxjs';
 import { UserForAuth } from '../types/user';
 import { HttpClient } from '@angular/common/http';
 import { enviroment } from '../../enviroments/environment';
+import { Review } from '../types/product';
 
 @Injectable({
   providedIn: 'root'
@@ -31,12 +32,12 @@ export class UserService implements OnDestroy {
 
   register(username: string, phone: string, email: string, password: string, rePassword: string) {
     return this.http.post<UserForAuth>(enviroment.apiUrl + '/users/register', {
-        username,
-        phone,
-        email,
-        password,
-        rePassword,
-      })
+      username,
+      phone,
+      email,
+      password,
+      rePassword,
+    })
       .pipe(tap((user) => this.user$$.next(user)));
   }
 
@@ -69,7 +70,14 @@ export class UserService implements OnDestroy {
 
   likeProduct(userId: string, productId: string) {
     const url = enviroment.apiUrl;
-    const result = this.http.post(url + `/users/${userId}/liked`, {userId, productId});
+    const result = this.http.post(url + `/users/${userId}/liked`, { userId, productId });
+    return result;
+  }
+
+  addReview(user: string, title: string, productId: string, rating: number, comment: string) {
+    const url = enviroment.apiUrl;
+    const review: Review = { user, title, productId, rating, comment };
+    const result = this.http.post(url + `/users/${user}/reviews`, review);
     return result;
   }
 

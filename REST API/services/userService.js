@@ -48,6 +48,28 @@ const userService = {
         }
 
         return user.liked; 
+    },
+
+    async unlikeProduct(userId, productId) {
+        const user = await User.findById(userId);
+
+        if (user.liked.includes(productId)) {
+            user.liked.pop(productId); 
+            await user.save(); 
+        }
+
+        return user.liked; 
+    },
+
+    async addReview(userId, review) {
+        const user = await User.findById(userId);
+
+        if (!user.reviews.includes(review)) {
+            user.reviews.push(review);
+            await user.save();
+        }
+
+        return user.reviews;
     }
 }
 
