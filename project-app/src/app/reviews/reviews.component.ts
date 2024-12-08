@@ -3,7 +3,8 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { ApiService } from '../api.service';
 import { UserService } from '../user/user.service';
 import { ActivatedRoute } from '@angular/router';
-import { Review } from '../types/product';
+import { Product, Review } from '../types/product';
+import { User } from '../types/user';
 
 @Component({
   selector: 'app-reviews',
@@ -29,6 +30,8 @@ export class ReviewsComponent implements OnInit {
 
   productId: string = '';
   reviews: Review[] = [];
+  user: User | undefined;
+  product: Product | undefined;
 
   constructor(private api: ApiService, private userService: UserService, private route: ActivatedRoute) {}
 
@@ -53,12 +56,15 @@ export class ReviewsComponent implements OnInit {
     }
 
     const { title, rating, comment } = this.form.value;
-    const user = JSON.parse(localStorage.getItem('user')!);
-    const userId = user._id;
+    const userId = JSON.parse(localStorage.getItem('user')!)._id;
+    this.userService.getProfile(userId).subscribe((data) => this.user = data);
+    const username = this.user?.username;
     const productId = this.productId;
+    this.api.getProduct(productId).subscribe((data) => this.product = data);
+    const productName = this.product?.name
 
-    this.api.postReview(userId!, title!, productId!, rating!, comment!).subscribe((data) => console.log(data));
-    this.userService.addReview(userId!, title!, productId!, rating!, comment!).subscribe((data) => console.log(data));
+    this.api.postReview(username!, title!, productName!, rating!, comment!).subscribe((data) => console.log(data));
+    this.userService.addReview(username!, title!, productId!, rating!, comment!).subscribe((data) => console.log(data));
 
     this.form.reset();
   }

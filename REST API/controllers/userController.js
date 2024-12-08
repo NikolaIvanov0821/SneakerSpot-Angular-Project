@@ -26,6 +26,12 @@ userController.post('/logout', async (req, res) => {
     res.status(204).end();
 });
 
+userController.get('/:userId', async (req, res) => {
+    const userId = req.params.userId;
+    const result = await userService.getProfile(userId);
+    res.json(result)
+})
+
 userController.get('/:userId/liked', async (req, res) => {
     try {
         const userId = req.params.userId;

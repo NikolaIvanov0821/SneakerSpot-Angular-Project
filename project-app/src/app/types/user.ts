@@ -1,3 +1,5 @@
+import { Review } from "./product";
+
 export interface User {
     _id: string;
     username: string;
@@ -5,7 +7,7 @@ export interface User {
     email: string;
     password: string;
     liked: string[];
-    reviews: string[];
+    reviews: Review[];
     createdAt: string;
     updatedAt: string;
 }

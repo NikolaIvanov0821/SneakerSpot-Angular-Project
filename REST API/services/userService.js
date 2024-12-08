@@ -33,6 +33,11 @@ const userService = {
         return true;
     },
 
+    async getProfile(userId) {
+        const user = await User.findById(userId);
+        return user;
+    },
+
     async getLikedProducts(userId) {
         const user = await User.findById(userId);
         return user.liked;

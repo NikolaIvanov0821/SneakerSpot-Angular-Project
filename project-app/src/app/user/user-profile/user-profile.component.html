@@ -1,25 +1,28 @@
-<p>user-profile works!</p>
-
+@if (isLoggedIn) {
 <div class="page-container">
     <div class="profile-container">
         <img src="https://placehold.co/200" alt="profile image">
         <div class="user-info">
-            <p><i class="fa-solid fa-user"></i>Username: Ivan Ivanov</p>
-            <p><i class="fa-solid fa-phone"></i>Phone Number: +359 888 888 8888</p>
-            <p><i class="fa-solid fa-envelope"></i>Email: ivan&#64;abv.bg</p>
-            <p><i class="fa-solid fa-heart"></i>Liked Posts: 5</p>
-            <p><i class="fa-solid fa-star"></i>Reviewed Posts: 5</p>
+            <p><i class="fa-solid fa-user"></i>Username: {{user?.username}}</p>
+            <p><i class="fa-solid fa-phone"></i>Phone Number: +359 {{user?.tel}}</p>
+            <p><i class="fa-solid fa-envelope"></i>Email: {{user?.email}}</p>
+            <p><i class="fa-solid fa-heart"></i>Liked Posts: {{user?.liked?.length}}</p>
+            <p><i class="fa-solid fa-star"></i>Reviewed Posts: {{user?.reviews?.length}}</p>
         </div>
     </div>
 
     <div class="review-container">
+        @for (review of reviews; track $index) {
         <div class="review">
-            <h3>heading</h3>
-            <p class="review-meta">rating <span>user - date</span></p>
-            <p class="review-text">content</p>
+            <h3>{{review.productId}}</h3>
+            <h4>{{review.title}}</h4>
+            <p class="review-meta">⭐⭐⭐⭐⭐ {{review.rating}}/5 <span>{{review.user}}</span></p>
+            <p class="review-text">{{review.comment}}</p>
         </div>
+        }
 
-        <div class="review">
+
+        <!-- <div class="review">
             <h3>Level Up</h3>
             <p class="review-meta">⭐⭐⭐⭐⭐ <span>p8haan - Nov 26, 2024</span></p>
             <p class="review-text">Classic style and very comfortable. A very versatile shoe. They are a great addition
@@ -36,6 +39,7 @@
             <h3>Great!</h3>
             <p class="review-meta">⭐⭐⭐⭐⭐ <span>NicNak - Nov 14, 2024</span></p>
             <p class="review-text">Bought for my son's birthday, & he loved them. Great colours, fit perfect</p>
-        </div>
+        </div> -->
     </div>
 </div>
+}

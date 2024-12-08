@@ -1,6 +1,6 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { BehaviorSubject, Subscription, tap } from 'rxjs';
-import { UserForAuth } from '../types/user';
+import { User, UserForAuth } from '../types/user';
 import { HttpClient } from '@angular/common/http';
 import { enviroment } from '../../enviroments/environment';
 import { Review } from '../types/product';
@@ -48,8 +48,9 @@ export class UserService implements OnDestroy {
     }));
   }
 
-  getProfile() {
-    return this.http.get<UserForAuth>('/users/register').pipe(tap((user) => this.user$$.next(user)));
+  getProfile(userId: string) {
+    const url = enviroment.apiUrl;
+    return this.http.get<User>(url + '/users/' + userId).pipe(tap((user) => this.user$$.next(user)));
   }
 
   // updateProfile(username: string, email: string, tel?: string) {
