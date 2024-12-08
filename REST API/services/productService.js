@@ -48,6 +48,28 @@ const productService = {
         }
 
         return product.likes; 
+    },
+
+    async unlikeProduct(productId, userId) {
+        const product = await Product.findById(productId);
+
+        if (product.likes.includes(userId)) {
+            product.likes.pop(userId); 
+            await product.save(); 
+        }
+
+        return product.likes;
+    },
+
+    async postReview(productId, review) {
+        const product = await Product.findById(productId);
+
+        if (!product.reviews.includes(review)) {
+            product.reviews.push(review); 
+            await product.save(); 
+        }
+
+        return product.reviews;
     }
 }
 

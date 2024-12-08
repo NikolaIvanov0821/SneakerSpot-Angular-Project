@@ -31,6 +31,23 @@ const userService = {
         // TODO: Invalidate token
         
         return true;
+    },
+
+    async getLikedProducts(userId) {
+        const user = await User.findById(userId);
+        return user.liked;
+    },
+
+    async likeProduct(userId, productId) {
+        const user = await User.findById(userId);
+        console.log(user);
+
+        if (!user.liked.includes(productId)) {
+            user.liked.push(productId); 
+            await user.save(); 
+        }
+
+        return user.liked; 
     }
 }
 

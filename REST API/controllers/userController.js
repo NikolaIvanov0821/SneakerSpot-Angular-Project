@@ -26,4 +26,24 @@ userController.post('/logout', async (req, res) => {
     res.status(204).end();
 });
 
+userController.get('/:userId/liked', async (req, res) => {
+    try {
+        const userId = req.params.userId;
+        const likedProducts = await userService.getLikedProducts(userId);
+        res.json(likedProducts);
+    } catch (error) {
+        console.log(error);
+    }
+});
+
+userController.post('/:userId/liked', async (req, res) => {
+    try {
+        const userId = req.params.userId;
+        const updatedLikes = await userService.likeProduct(userId, req.body.productId);
+        res.json(updatedLikes);
+    } catch (error) {
+        console.log(error);
+    }
+});
+
 export default userController;

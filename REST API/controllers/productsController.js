@@ -29,7 +29,7 @@ productController.get('/:productId', async (req, res) => {
     res.json(product);
 });
 
-productController.put('/:productId', async (req , res) => {
+productController.put('/:productId', async (req, res) => {
     const productData = req.body;
     const productId = req.params.productId;
 
@@ -55,17 +55,36 @@ productController.delete('/:productId', async (req, res) => {
 productController.get('/:productId/likes', async (req, res) => {
     const productId = req.params.productId
     const likes = await productService.getLikes(productId);
-    
+
     res.json(likes)
-})
+});
 
 productController.post('/:productId/likes', async (req, res) => {
     try {
-        const { productId } = req.params;
+        const productId = req.params.productId;
         const updatedLikes = await productService.likeProduct(productId, req.body.userId);
         res.json(updatedLikes);
     } catch (error) {
         console.log(error);
+    }
+});
+
+productController.put('/:productId/likes', async (req, res) => {
+    try {
+        const productId = req.params.productId;
+        const updatedLikes = await productService.unlikeProduct(productId, req.body.userId);
+        res.json(updatedLikes);
+    } catch (error) {
+        console.log(error);
+    }
+});
+
+productController.post('/:productId/reviews', async (req, res) => {
+    try {
+        const productId = req.params.productId;
+        const updatedReviews = await '';
+    } catch (error) {
+        
     }
 });
 

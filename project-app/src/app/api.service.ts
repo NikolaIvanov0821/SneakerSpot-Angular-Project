@@ -26,24 +26,24 @@ export class ApiService {
 
     createProduct(data: Product) {
         const url = enviroment.apiUrl;
-        return this.http.post<Product>(url + "/products", data)
+        return this.http.post<Product>(url + "/products", data);
     }
 
     getLikes(productId: string) {
-        const url = enviroment.apiUrl
-        const result = this.http.get(url + `/products/${productId}/likes`)
-        return result
+        const url = enviroment.apiUrl;
+        const result = this.http.get(url + `/products/${productId}/likes`);
+        return result;
     }
 
     likeProduct(productId: string, userId: string) {
-        const url = enviroment.apiUrl
-        const result = this.http.post(url + `/products/${productId}/likes`, { productId, userId })
-        return result
+        const url = enviroment.apiUrl;
+        const result = this.http.post(url + `/products/${productId}/likes`, { productId, userId });
+        return result;
     }
 
     unlikeProduct(productId: string, userId: string) {
-        const url = enviroment.apiUrl
-        const result = this.http.put(url + `/products/${productId}/likes`, { productId, userId })
-        return result
+        const url = enviroment.apiUrl;
+        const result = this.http.put(url + `/products/${productId}/likes`, { productId, userId });
+        return result;
     }
 }
