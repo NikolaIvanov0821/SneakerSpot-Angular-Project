@@ -13,33 +13,24 @@
 
     <div class="review-container">
         @for (review of reviews; track $index) {
+
         <div class="review">
-            <h3>{{review.productId}}</h3>
+            <div class="review-top">
+                <h3 [routerLink]="'/products/'+review.productId">{{review.name ? review.name : 'No product name'}}</h3>
+                <div class="edit-delete"><i class="fa-solid fa-trash" (click)="showDeleteConfirmation(review)"></i></div>
+            </div>
             <h4>{{review.title}}</h4>
-            <p class="review-meta">⭐⭐⭐⭐⭐ {{review.rating}}/5 <span>{{review.user}}</span></p>
+            <p class="review-meta">⭐⭐⭐⭐⭐ {{review.rating}}/5 <span>{{review.username}}</span></p>
             <p class="review-text">{{review.comment}}</p>
         </div>
+        <div *ngIf="isDeleteConfirmationVisible" class="delete-confirmation-modal">
+            <div class="modal-content">
+                <h3>Are you sure you want to delete this review?</h3>
+                <button (click)="deleteReview(reviewToDelete)">Yes, Delete</button>
+                <button (click)="cancelDelete()">Cancel</button>
+            </div>
+        </div>
         }
-
-
-        <!-- <div class="review">
-            <h3>Level Up</h3>
-            <p class="review-meta">⭐⭐⭐⭐⭐ <span>p8haan - Nov 26, 2024</span></p>
-            <p class="review-text">Classic style and very comfortable. A very versatile shoe. They are a great addition
-                to my collection.</p>
-        </div>
-
-        <div class="review">
-            <h3>Buy the asap !!! Don't walk runnnn</h3>
-            <p class="review-meta">⭐⭐⭐⭐⭐ <span>Cassy02e4addd52d445db82d2ffadc1 - Nov 24, 2024</span></p>
-            <p class="review-text">Don't walk to get them runnnnnnnn to get it</p>
-        </div>
-
-        <div class="review">
-            <h3>Great!</h3>
-            <p class="review-meta">⭐⭐⭐⭐⭐ <span>NicNak - Nov 14, 2024</span></p>
-            <p class="review-text">Bought for my son's birthday, & he loved them. Great colours, fit perfect</p>
-        </div> -->
     </div>
 </div>
 }

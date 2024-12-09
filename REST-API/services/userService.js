@@ -6,10 +6,13 @@ import User from "../models/User.js";
 const userService = {
     async register(username, phone, email, password) {
         const user = await User.findOne({email});
-
         console.log(user);
+        if (user) {
+            throw new Error('User already exists');
+        }
 
-        const createdUser = await User.create({ username, phone, email, password });
+        const hashed = await bcrypt.hash(password, 10)
+        const createdUser = await User.create({ username, phone, email, password: hashed });
 
         return generateResponse(createdUser);
     },
@@ -20,7 +23,7 @@ const userService = {
             throw new Error('Invalid user of password');
         }
 
-        const isValid = await bcrypt.compare(password, user.password);
+        const isValid = bcrypt.compare(password, user.password);
         if (!isValid) {
             throw new Error('Invalid user of password');
         }
@@ -71,6 +74,18 @@ const userService = {
 
         if (!user.reviews.includes(review)) {
             user.reviews.push(review);
+            await user.save();
+        }
+
+        return user.reviews;
+    },
+
+    async deleteReview(userId, review) {
+        const user = await User.findById(userId);
+
+        if (user.reviews.includes(review)) {
+            const index = user.reviews.indexOf(review);
+            delete user.reviews[index];
             await user.save();
         }
 

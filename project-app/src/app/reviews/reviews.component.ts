@@ -30,10 +30,10 @@ export class ReviewsComponent implements OnInit {
 
   productId: string = '';
   reviews: Review[] = [];
-  user: User | undefined;
-  product: Product | undefined;
+  user!: User;
+  product!: Product;
 
-  constructor(private api: ApiService, private userService: UserService, private route: ActivatedRoute) {}
+  constructor(private api: ApiService, private userService: UserService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.productId = this.route.snapshot.params['productId'];
@@ -50,21 +50,29 @@ export class ReviewsComponent implements OnInit {
     return isLogged;
   }
 
-  postReview() {
+  async postReview() {
     if (!this.form.valid) {
       return;
     }
 
     const { title, rating, comment } = this.form.value;
     const userId = JSON.parse(localStorage.getItem('user')!)._id;
-    this.userService.getProfile(userId).subscribe((data) => this.user = data);
-    const username = this.user?.username;
+    const user = await this.userService.getProfile(userId).toPromise();
+    const username = user?.username;
     const productId = this.productId;
-    this.api.getProduct(productId).subscribe((data) => this.product = data);
-    const productName = this.product?.name
+    const product = await this.api.getProduct(productId).toPromise();
+    const productName = product?.name;
 
-    this.api.postReview(username!, title!, productName!, rating!, comment!).subscribe((data) => console.log(data));
-    this.userService.addReview(username!, title!, productId!, rating!, comment!).subscribe((data) => console.log(data));
+    console.log({ username, userId, title, productName, productId, rating, comment });
+    const review = { username, userId, title, productName, productId, rating, comment };
+
+    const productReviewResponse = await this.api.postReview(productId, review).toPromise();
+    console.log(productReviewResponse);
+    const userReviewResponse = await this.userService.addReview(userId, review).toPromise();
+    console.log(userReviewResponse);
+    
+    // this.api.postReview(username!, userId!, title!, productName!, productId!, rating!, comment!).subscribe((data) => console.log(data));
+    // this.userService.addReview(username!, userId!, title!, productName!, productId!, rating!, comment!).subscribe((data) => console.log(data));
 
     this.form.reset();
   }

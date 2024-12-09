@@ -57,7 +57,7 @@
         <h2>All Reviews</h2>
         @for (review of reviews; track $index) {
         <div class="review-item">
-            <h3>{{ review.title }} - {{ review.user }}</h3>
+            <h3>{{ review.title }} - {{ review.username }}</h3>
             <p>{{ review.comment }}</p>
         </div>
         }

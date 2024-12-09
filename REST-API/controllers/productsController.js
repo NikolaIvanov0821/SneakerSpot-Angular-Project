@@ -93,7 +93,21 @@ productController.post('/:productId/reviews', async (req, res) => {
     try {
         const productId = req.params.productId;
         const review = req.body;
+        console.log(review);
         const updatedReviews = await productService.postReview(productId, review);
+
+        res.json(updatedReviews)
+    } catch (error) {
+        console.log(error);
+    }
+});
+
+productController.put('/:productId/reviews', async (req, res) => {
+    try {
+        const productId = req.params.productId;
+        const review = req.body;
+        console.log(review);
+        const updatedReviews = await productService.deleteReview(productId, review);
 
         res.json(updatedReviews)
     } catch (error) {

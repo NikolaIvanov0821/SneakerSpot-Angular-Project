@@ -75,6 +75,18 @@ const productService = {
     async getReviews(productId) {
         const product = await Product.findById(productId);
         return product.reviews;
+    },
+
+    async deleteReview(productId, review) {
+        const product = await Product.findById(productId);
+
+        if (product.reviews.includes(review)) {
+            const index = product.reviews.indexOf(review);
+            delete product.reviews[index];
+            await product.save(); 
+        }
+
+        return product.reviews;
     }
 }
 

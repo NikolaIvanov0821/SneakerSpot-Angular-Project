@@ -2,7 +2,6 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Product, Review } from "./types/product";
 import { enviroment } from "../enviroments/environment";
-import { runPostSignalSetFn } from "@angular/core/primitives/signals";
 
 
 @Injectable({
@@ -47,10 +46,9 @@ export class ApiService {
         return result;
     }
 
-    postReview(user: string, title: string, productId: string, rating: number, comment: string) {
+    postReview(productId: string, review: object) {
         const url = enviroment.apiUrl;
-        const review: Review = { user, title, productId, rating, comment };
-        const result = this.http.post(url + `/products/${productId}/reviews`, review);
+        const result = this.http.post<Review>(url + `/products/${productId}/reviews`, review);
         return result;
     }
 
@@ -59,4 +57,11 @@ export class ApiService {
         const result = this.http.get<Review[]>(url + `/products/${productId}/reviews`);
         return result;
     }
+
+    deleteReview(productId: string, review: object) {
+        const url = enviroment.apiUrl;
+        const result = this.http.put(url + `/products/${productId}/reviews`, review);
+        return result;
+    }
+
 }

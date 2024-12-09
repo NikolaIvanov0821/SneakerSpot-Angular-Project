@@ -72,4 +72,14 @@ userController.post('/:userId/reviews', async (req, res) => {
     }
 });
 
+userController.put('/:userId/reviews', async (req, res) => {
+    try {
+        const userId = req.params.userId;
+        const updatedReviews = await userService.deleteReview(userId, req.body);
+        res.json(updatedReviews)
+    } catch (error) {
+        console.log(error);
+    }
+});
+
 export default userController;
