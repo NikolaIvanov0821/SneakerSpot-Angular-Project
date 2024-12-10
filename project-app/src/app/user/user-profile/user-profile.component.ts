@@ -106,9 +106,12 @@ export class UserProfileComponent implements OnInit {
     this.reviewToDelete = null;
   }
 
-  deleteReview() {
+  async deleteReview() {
     if (!this.reviewToDelete) return;
 
+    const result = await this.reviewsService.deleteReview(this.reviewToDelete).toPromise();
+    console.log(result);
     
+    this.cancelDelete();
   }
 }
