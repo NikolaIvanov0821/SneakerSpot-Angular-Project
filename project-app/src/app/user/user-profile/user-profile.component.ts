@@ -6,6 +6,7 @@ import { RouterLink } from '@angular/router';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ApiService } from '../../api.service';
+import { ReviewsService } from '../../reviews/reviews.service';
 
 @Component({
   selector: 'app-user-profile',
@@ -18,16 +19,33 @@ export class UserProfileComponent implements OnInit {
   user: User | undefined;
   reviews: Review[] = [];
   isDeleteConfirmationVisible: boolean = false;
-  reviewToDelete!: Review;
+  form = new FormGroup({
+    title: new FormControl('', [Validators.required]),
+    rating: new FormControl(0, [Validators.required, Validators.min(0), Validators.max(5)]),
+    comment: new FormControl('', [Validators.required])
+  });
 
-  constructor(private userService: UserService, private api: ApiService) { }
+  editTriggered: boolean = false;
+  deleteTriggered: boolean = false;
+  reviewToEdit: Review | null = null; 
+  reviewToDelete: string | null = null; 
+
+
+  constructor(private userService: UserService, private api: ApiService, private reviewsService: ReviewsService) { }
 
   ngOnInit(): void {
     const userId = JSON.parse(localStorage.getItem('user')!)._id;
     this.userService.getProfile(userId).subscribe((data) => {
       this.user = data;
-      this.reviews = this.user.reviews;
     });
+
+    this.reviewsService.getReviews().subscribe((data) => {
+      data.map(review => {
+        if (review.userId === userId) {
+          this.reviews.push(review)
+        }
+      })
+    })
   }
 
   get isLoggedIn(): boolean {
@@ -38,26 +56,59 @@ export class UserProfileComponent implements OnInit {
     return isLogged;
   }
 
-  showDeleteConfirmation(review: Review): void {
-    // Show the confirmation modal
-    this.isDeleteConfirmationVisible = true;
-    this.reviewToDelete = review;
+  isFieldTextMissing(controlName: string) {
+    return (
+      this.form.get(controlName)?.touched &&
+      this.form.get(controlName)?.errors?.['required']
+    );
   }
 
-  cancelDelete(): void {
-    // Hide the confirmation modal
-    this.isDeleteConfirmationVisible = false;
-    this.reviewToDelete;
+  triggerEdit(review: Review) {
+    this.editTriggered = true;
+
+    this.reviewToEdit = review;
+
+    // Populate form with current review values
+    this.form.patchValue({
+      title: review.title,
+      rating: review.rating,
+      comment: review.comment
+    });
   }
 
-  async deleteReview(review: Review){
-    const productId = review.productId;
-    const deletedFromProducts = await this.api.deleteReview(productId, review).toPromise();
-    console.log(deletedFromProducts);
+  cancelEdit() {
+    this.editTriggered = false;
+    this.reviewToEdit = null;
+    this.form.reset();
+  }
+
+  async editReview() {
+    if (!this.form.valid || !this.reviewToEdit) return;
+
+    const updatedReview = {
+      ...this.reviewToEdit,
+      ...this.form.value
+    };
+
+    const result = await this.reviewsService.updateReview(updatedReview._id, updatedReview).toPromise();
+    console.log(result);
+
+    this.cancelEdit();
+  }
+
+  triggerDelete(reviewId: string) {
+    this.deleteTriggered = true;
+    this.reviewToDelete = reviewId;
+  }
+
+  cancelDelete() {
+    this.deleteTriggered = false;
+    this.reviewToDelete = null;
+  }
+
+  deleteReview() {
+    if (!this.reviewToDelete) return;
+
     
-    const userId = JSON.parse(localStorage.getItem('user')!)._id;
-    const deletedFormUser = await this.userService.deleteReview(userId, review).toPromise();
-    console.log(deletedFormUser);
   }
-
 }

@@ -22,7 +22,7 @@ const reviewService = {
     },
 
     update(reviewId, reviewData) {
-        return Review.findByIdAndUpdate(reviewId, reviewId)
+        return Review.findByIdAndUpdate(reviewId, reviewData)
     },
 
     delete(reviewId) {

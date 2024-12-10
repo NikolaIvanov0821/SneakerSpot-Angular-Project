@@ -46,22 +46,22 @@ export class ApiService {
         return result;
     }
 
-    postReview(productId: string, review: object) {
-        const url = enviroment.apiUrl;
-        const result = this.http.post<Review>(url + `/products/${productId}/reviews`, review);
-        return result;
-    }
+    // postReview(productId: string, review: object) {
+    //     const url = enviroment.apiUrl;
+    //     const result = this.http.post<Review>(url + `/products/${productId}/reviews`, review);
+    //     return result;
+    // }
 
-    getReviews(productId: string) {
-        const url = enviroment.apiUrl;
-        const result = this.http.get<Review[]>(url + `/products/${productId}/reviews`);
-        return result;
-    }
+    // getReviews(productId: string) {
+    //     const url = enviroment.apiUrl;
+    //     const result = this.http.get<Review[]>(url + `/products/${productId}/reviews`);
+    //     return result;
+    // }
 
-    deleteReview(productId: string, review: object) {
-        const url = enviroment.apiUrl;
-        const result = this.http.put(url + `/products/${productId}/reviews`, review);
-        return result;
-    }
+    // deleteReview(productId: string, review: object) {
+    //     const url = enviroment.apiUrl;
+    //     const result = this.http.put(url + `/products/${productId}/reviews`, review);
+    //     return result;
+    // }
 
 }

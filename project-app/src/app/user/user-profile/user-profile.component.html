@@ -14,22 +14,74 @@
     <div class="review-container">
         @for (review of reviews; track $index) {
 
+        @if (editTriggered && reviewToEdit?._id === review._id) {
+        <div class="edit-form">
+            <h2>Edit your review</h2>
+            <form [formGroup]="form" class="regiser" (ngSubmit)="editReview()">
+                @if(form.get('title')?.touched){
+                <div>
+                    @if(form.get('title')?.errors?.['required']){
+                    <p class="error">Title is required!</p>
+                    }
+                </div>
+                }
+
+                <label for="title"><i class="fa-solid fa-user"></i>Title</label>
+                <input [class]="(isFieldTextMissing('title')) ? 'error': ''" type="text" id="title" name="title"
+                    placeholder="Title" formControlName="title">
+
+                @if(form.get('rating')?.touched){
+                <div>
+                    @if(form.get('rating')?.errors?.['required']){
+                    <p class="error">Rating is required!</p>
+                    }
+                </div>
+                }
+
+                <label for="rating"><i class="fa-solid fa-user"></i>Rating</label>
+                <input [class]="(isFieldTextMissing('rating')) ? 'error': ''" type="number" id="rating" name="rating"
+                    placeholder="Rating" formControlName="rating">
+
+                @if(form.get('comment')?.touched){
+                <div>
+                    @if(form.get('comment')?.errors?.['required']){
+                    <p class="error">Comment is required!</p>
+                    }
+                </div>
+                }
+
+                <label for="comment"><i class="fa-solid fa-user"></i>Comment</label>
+                <input [class]="(isFieldTextMissing('comment')) ? 'error': ''" type="textarea" id="comment"
+                    name="comment" placeholder="Comment" formControlName="comment">
+
+                <div class="form-buttons">
+                    <button type="submit">Save</button>
+                    <button type="button" (click)="cancelEdit()">Discard</button>
+                </div>
+            </form>
+        </div>
+        }
+
         <div class="review">
             <div class="review-top">
                 <h3 [routerLink]="'/products/'+review.productId">{{review.name ? review.name : 'No product name'}}</h3>
-                <div class="edit-delete"><i class="fa-solid fa-trash" (click)="showDeleteConfirmation(review)"></i></div>
+                <div class="edit-delete"><i class="fa-solid fa-pen" (click)="triggerEdit(review)"></i><i
+                        class="fa-solid fa-trash" (click)="triggerDelete(review._id)"></i></div>
             </div>
             <h4>{{review.title}}</h4>
             <p class="review-meta">⭐⭐⭐⭐⭐ {{review.rating}}/5 <span>{{review.username}}</span></p>
             <p class="review-text">{{review.comment}}</p>
         </div>
-        <div *ngIf="isDeleteConfirmationVisible" class="delete-confirmation-modal">
-            <div class="modal-content">
-                <h3>Are you sure you want to delete this review?</h3>
-                <button (click)="deleteReview(reviewToDelete)">Yes, Delete</button>
-                <button (click)="cancelDelete()">Cancel</button>
+
+        @if (deleteTriggered && reviewToDelete === review._id) {
+        <div class="delete-confirmation">
+            <p>Are you sure you want to delete this review?</p>
+            <div class="confirmation-buttons">
+                <button (click)="deleteReview()">Yes, delete</button>
+                <button (click)="cancelDelete()">No, cancel</button>
             </div>
         </div>
+        }
         }
     </div>
 </div>

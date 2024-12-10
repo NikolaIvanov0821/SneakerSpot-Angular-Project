@@ -16,7 +16,7 @@ reviewsController.post('/', async (req, res) => {
         const review = await reviewService.create(reviewData);
         res.json(review);
     } catch (error) {
-        res.status(400).json({ message: getErrorMessage(err) });
+        console.log(error);
     }
 });
 
@@ -35,7 +35,7 @@ reviewsController.put('/:reviewId', async (req, res) => {
 
         res.json(updatedReview);
     } catch (error) {
-        res.status(400).json({ message: getErrorMessage(error) });
+        console.log(error);
     }
 });
 
@@ -45,6 +45,8 @@ reviewsController.delete('/:reviewId', async (req, res) => {
 
         res.status(204).end();
     } catch (error) {
-        res.status(400).json({ message: getErrorMessage(error) });
+        console.log(error);
     }
 });
+
+export default reviewsController;

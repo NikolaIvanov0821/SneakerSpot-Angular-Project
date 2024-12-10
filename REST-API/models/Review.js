@@ -1,7 +1,6 @@
 import { Schema, model } from "mongoose";
 
 const ReviewSchema = new Schema({
-    _id: String,
     username: String,
     userId: String,
     title: String,

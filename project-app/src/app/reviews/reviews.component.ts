@@ -5,6 +5,7 @@ import { UserService } from '../user/user.service';
 import { ActivatedRoute } from '@angular/router';
 import { Product, Review } from '../types/product';
 import { User } from '../types/user';
+import { ReviewsService } from './reviews.service';
 
 @Component({
   selector: 'app-reviews',
@@ -33,12 +34,16 @@ export class ReviewsComponent implements OnInit {
   user!: User;
   product!: Product;
 
-  constructor(private api: ApiService, private userService: UserService, private route: ActivatedRoute) { }
+  constructor(private api: ApiService, private userService: UserService, private route: ActivatedRoute, private reviewsService: ReviewsService) { }
 
   ngOnInit(): void {
     this.productId = this.route.snapshot.params['productId'];
-    this.api.getReviews(this.productId).subscribe((data) => {
-      this.reviews = data;
+    this.reviewsService.getReviews().subscribe((data) => {
+      data.map((review) => {
+        if(review.productId === this.productId) {
+          this.reviews.push(review)
+        }
+      } )
     })
   }
 
@@ -61,15 +66,13 @@ export class ReviewsComponent implements OnInit {
     const username = user?.username;
     const productId = this.productId;
     const product = await this.api.getProduct(productId).toPromise();
-    const productName = product?.name;
+    const name = product?.name;
 
-    console.log({ username, userId, title, productName, productId, rating, comment });
-    const review = { username, userId, title, productName, productId, rating, comment };
+    console.log({ username, userId, title, name, productId, rating, comment });
+    const review = { username, userId, title, name, productId, rating, comment };
 
-    const productReviewResponse = await this.api.postReview(productId, review).toPromise();
+    const productReviewResponse = await this.reviewsService.postReview(review).toPromise();
     console.log(productReviewResponse);
-    const userReviewResponse = await this.userService.addReview(userId, review).toPromise();
-    console.log(userReviewResponse);
     
     // this.api.postReview(username!, userId!, title!, productName!, productId!, rating!, comment!).subscribe((data) => console.log(data));
     // this.userService.addReview(username!, userId!, title!, productName!, productId!, rating!, comment!).subscribe((data) => console.log(data));
