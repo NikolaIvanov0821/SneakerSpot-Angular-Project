@@ -7,5 +7,7 @@ const routes = Router();
 
 routes.use('/products', productController)
 routes.use('/users', userController)
+routes.use('/reviews', reviewsController)
+
 
 export default routes;
