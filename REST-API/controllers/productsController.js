@@ -12,7 +12,6 @@ productController.get('/', async (req, res) => {
 });
 
 productController.post('/', async (req, res) => {
-    //const userId = req.user._id;
     const productData = req.body;
 
     try {

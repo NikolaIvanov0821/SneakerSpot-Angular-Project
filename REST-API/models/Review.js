@@ -1,9 +1,12 @@
 import { Schema, model } from "mongoose";
 
 const ReviewSchema = new Schema({
-    user: String,
-    productId: String,
+    _id: String,
+    username: String,
+    userId: String,
     title: String,
+    name: String,
+    productId: String,
     rating: {
         type: Number,
         min: 0,
