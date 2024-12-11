@@ -45,7 +45,7 @@ export class UserProfileComponent implements OnInit {
           this.reviews.push(review)
         }
       })
-    })
+    });
   }
 
   get isLoggedIn(): boolean {

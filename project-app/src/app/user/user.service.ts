@@ -3,8 +3,6 @@ import { BehaviorSubject, Subscription, tap } from 'rxjs';
 import { User, UserForAuth } from '../types/user';
 import { HttpClient } from '@angular/common/http';
 import { enviroment } from '../../enviroments/environment';
-import { Review } from '../types/product';
-import { ReviewsComponent } from '../reviews/reviews.component';
 
 @Injectable({
   providedIn: 'root'
@@ -73,18 +71,6 @@ export class UserService implements OnDestroy {
   likeProduct(userId: string, productId: string) {
     const url = enviroment.apiUrl;
     const result = this.http.post(url + `/users/${userId}/liked`, { userId, productId });
-    return result;
-  }
-
-  addReview(userId: string, review: object) {
-    const url = enviroment.apiUrl;
-    const result = this.http.post<Review>(url + `/users/${userId}/reviews`, review);
-    return result;
-  }
-
-  deleteReview(userId: string, review: object) {
-    const url = enviroment.apiUrl;
-    const result = this.http.put(url + `/users/${userId}/reviews`, review);
     return result;
   }
 
