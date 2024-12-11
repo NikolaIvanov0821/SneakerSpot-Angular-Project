@@ -46,8 +46,6 @@ SneakerSpot is an Angular-based web application created for the project defense 
    ```
    The application will run on `http://localhost:4200`.
 
-4. (Optional) If the project requires a backend server, navigate to the backend directory (if applicable), install dependencies, and start the server.
-
 ---
 
 ## Usage
