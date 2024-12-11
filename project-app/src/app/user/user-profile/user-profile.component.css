@@ -3,6 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 5vh auto;
 }
 
 .profile-container {
@@ -137,7 +138,7 @@ h3:empty::before {
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
 }
 
-/* Headings */
+
 .edit-form h2, .delete-confirmation p {
     font-family: 'Arial', sans-serif;
     color: #333; 
@@ -145,7 +146,7 @@ h3:empty::before {
     margin-bottom: 15px;
 }
 
-/* Labels */
+
 .edit-form label {
     display: block;
     font-weight: 600;
@@ -153,7 +154,7 @@ h3:empty::before {
     color: #555;
 }
 
-/* Inputs */
+
 .edit-form input[type="text"],
 .edit-form input[type="number"],
 .edit-form input[type="textarea"] {

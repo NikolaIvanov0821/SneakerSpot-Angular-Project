@@ -43,7 +43,6 @@ form input:focus {
     margin-bottom: 10px;
 }
 
-/* Password Fields */
 .password-input {
     display: flex;
     flex-direction: column;
@@ -60,7 +59,6 @@ form input:focus {
     margin-bottom: 15px;
 }
 
-/* Buttons */
 form button {
     font-size: 1rem;
     padding: 10px 20px;
@@ -82,7 +80,7 @@ form button:hover:not(:disabled) {
     color: #000000;
 }
 
-/* Links */
+
 form a {
     color: #ffde00;
     text-decoration: none;

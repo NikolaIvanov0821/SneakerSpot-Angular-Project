@@ -9,12 +9,10 @@ form {
     font-family: Arial, sans-serif;
 }
 
-/* Form-group styling */
 .form-group {
     margin-bottom: 15px;
 }
 
-/* Labels */
 label {
     display: block;
     font-size: 14px;
@@ -23,7 +21,6 @@ label {
     margin-bottom: 5px;
 }
 
-/* Inputs */
 input[type="text"],
 input[type="number"] {
     width: 100%;
@@ -41,7 +38,6 @@ input[type="number"]:focus {
     outline: none;
 }
 
-/* Submit Button */
 button {
     display: block;
     width: 100%;

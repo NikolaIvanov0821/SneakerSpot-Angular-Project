@@ -107,7 +107,7 @@ export class ProductDetailsComponent implements OnInit, OnDestroy {
   }
 
   postReview() {
-    
+
   }
 
   ngOnDestroy(): void {
