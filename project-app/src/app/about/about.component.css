@@ -1,0 +1,53 @@
+.about {
+    background-color: #f9f9f9;
+    padding: 60px 20px;
+}
+
+.about-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.about h1 {
+    font-size: 2.5rem;
+    color: #111;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.about h2 {
+    font-size: 1.8rem;
+    color: #222;
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
+.about h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.about p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.about ul {
+    padding-left: 20px;
+    list-style: disc;
+    color: #555;
+}
+
+.about ul li {
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.about-container ul li strong {
+    color: #111;
+}

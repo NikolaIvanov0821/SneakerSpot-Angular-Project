@@ -1,10 +1,15 @@
 <div class="home-container">
-  <!-- Carousel -->
   <div class="carousel">
     <div class="carousel-slides" [style.transform]="'translateX(-' + currentSlide * 100 + '%)'">
       <div class="carousel-slide" *ngFor="let slide of slides">
         <a [routerLink]="slide.link">
           <img [src]="slide.image" [alt]="slide.altText" />
+          @if (slides[0] == slide) {
+          <div class="slide-ad">
+            <p>Explore the latest sneakers and exclusive collections.</p>
+            <a routerLink="/products" class="cta-button">Shop Now</a>
+          </div>
+          }
         </a>
       </div>
     </div>
@@ -12,7 +17,12 @@
     <button class="carousel-control next" (click)="nextSlide()">&#10095;</button>
   </div>
 
-  <!-- Highlights Section -->
+  <div class="hero-section">
+    <h1>Welcome to Sneaker Spot</h1>
+    <p>Explore the latest sneakers and exclusive collections.</p>
+    <a routerLink="/products" class="cta-button">Shop Now</a>
+  </div>
+
   <div class="highlights">
     <h2>Shop the Latest Sneakers</h2>
     <div class="highlight-items">

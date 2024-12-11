@@ -31,14 +31,14 @@ export class HomeComponent implements OnInit {
 
   slides = [
     {
-      image: 'https://via.placeholder.com/1200x400?text=Shop+Now', // Replace with actual image URL
+      image: "sneakerwall.png", // Replace with actual image URL
       altText: 'Shop Now',
       link: '/products',
     },
     {
       image: 'https://via.placeholder.com/1200x400?text=New+Arrival+1', // Replace with actual image URL
       altText: 'New Arrival 1',
-      link: '/products/6745e587ceba93ab8cd18d4c',
+      link: '/products/6745e8f2ceba93ab8cd18d55',
     },
     {
       image: 'https://via.placeholder.com/1200x400?text=New+Arrival+2', // Replace with actual image URL
