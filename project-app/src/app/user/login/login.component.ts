@@ -16,7 +16,11 @@ export class LoginComponent {
       Validators.required,
       Validators.minLength(8),
     ])
-  })
+  });
+  isError: boolean = false;
+  isSuccesful: boolean = false;
+  errorMessage: string = '';
+  successMessage: string = '';
 
   constructor(private userService: UserService, private router: Router) { }
 
@@ -34,10 +38,33 @@ export class LoginComponent {
 
     const { email, password } = this.form.value;
 
-    this.userService.login(email!, password!).subscribe((res) => {
-      console.log(res);
-      localStorage.setItem('user', JSON.stringify(res))
-      this.router.navigate(['/home'])
+    // this.userService.login(email!, password!).subscribe((res) => {
+    //   console.log(res);
+    //   localStorage.setItem('user', JSON.stringify(res))
+    //   this.router.navigate(['/home'])
+    // });
+
+    this.userService.login(email!, password!).subscribe({
+      next: (res) => {
+        localStorage.setItem('user', JSON.stringify(res));
+        this.isSuccesful = true;
+        this.successMessage = 'Login successful!';
+        this.clearMessagesAfterDelay();
+        this.router.navigate(['/home']);
+      },
+      error: (err) => {
+        this.isError = true;
+        this.errorMessage = err.error.message || 'An unexpected error occurred';
+        this.clearMessagesAfterDelay();
+      }
     });
+  }
+
+  clearMessagesAfterDelay() {
+    setTimeout(() => {
+      this.isError = false;
+      this.errorMessage = '';
+      this.successMessage = '';
+    }, 20000); 
   }
 }

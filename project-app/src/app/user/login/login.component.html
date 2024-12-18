@@ -1,4 +1,15 @@
 <div class="form-container">
+    @if (isError) {
+    <div class="error-message">
+        <p>{{ errorMessage }}</p>
+    </div>
+    }
+
+    @if (isSuccesful) {
+    <div class="success-message">
+        <p>{{ successMessage }}</p>
+    </div>
+    }
 
     <h2>Login Form</h2>
     <p>Login into your account to unlock the full experience of the site!</p>

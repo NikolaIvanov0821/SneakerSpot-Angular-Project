@@ -32,8 +32,12 @@ export class RegisterComponent {
       }
     ),
   });
+  isError: boolean = false;
+  isSuccesful: boolean = false;
+  errorMessage: string = '';
+  successMessage: string = '';
 
-  constructor(private userService: UserService, private router: Router) {}
+  constructor(private userService: UserService, private router: Router) { }
 
   isFieldTextMissing(controlName: string) {
     return (
@@ -58,19 +62,42 @@ export class RegisterComponent {
       return
     }
     console.log(this.form);
-    
-    
+
+
     const {
       username,
       phone,
       email,
-      passGroup: { password, rePassword} = {}     
+      passGroup: { password, rePassword } = {}
     } = this.form.value;
 
-    this.userService.register(username!, phone!, email!, password!, rePassword!).subscribe((res) => {
-      console.log(res);
-      localStorage.setItem('user', JSON.stringify(res))
-      this.router.navigate(['/home']);
-    })
+    // this.userService.register(username!, phone!, email!, password!, rePassword!).subscribe((res) => {
+    //   console.log(res);
+    //   localStorage.setItem('user', JSON.stringify(res))
+    //   this.router.navigate(['/home']);
+    // })
+
+    this.userService.register(username!, phone!, email!, password!, rePassword!).subscribe({
+      next: (res) => {
+        localStorage.setItem('user', JSON.stringify(res));
+        this.isSuccesful = true;
+        this.successMessage = 'Register successful!';
+        this.clearMessagesAfterDelay();
+        this.router.navigate(['/home']);
+      },
+      error: (err) => {
+        this.isError = true;
+        this.errorMessage = err.error.message || 'An unexpected error occurred';
+        this.clearMessagesAfterDelay();
+      }
+    });
+  }
+
+  clearMessagesAfterDelay() {
+    setTimeout(() => {
+      this.isError = false;
+      this.errorMessage = '';
+      this.successMessage = '';
+    }, 20000);
   }
 }

@@ -24,7 +24,7 @@ const userService = {
             throw new Error('Invalid user or password');
         }
 
-        const isValid = bcrypt.compare(password, user.password);
+        const isValid = await bcrypt.compare(password, user.password);
         if (!isValid) {
             throw new Error('Invalid user or password');
         }

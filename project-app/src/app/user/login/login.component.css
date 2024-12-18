@@ -8,8 +8,9 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.form-container > h2, .form-container > p {
-   text-align: center;
+.form-container>h2,
+.form-container>p {
+    text-align: center;
 }
 
 form.login {
@@ -88,4 +89,37 @@ form a {
 
 form a:hover {
     text-decoration: underline;
+}
+
+.error-message {
+    color: red;
+    background-color: #ffe6e6;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    animation: fadeOut 20s forwards;
+}
+
+.success-message {
+    color: green;
+    background-color: #e6ffe6;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    animation: fadeOut 20s forwards;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    95% {
+        opacity: 0.2;
+    }
+
+    100% {
+        opacity: 0;
+        display: none;
+    }
 }
