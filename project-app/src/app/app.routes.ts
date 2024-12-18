@@ -9,6 +9,8 @@ import { UserProfileComponent } from './user/user-profile/user-profile.component
 import { authGuard } from './guards/auth.guard';
 import { AboutComponent } from './about/about.component';
 import { ContactsComponent } from './contacts/contacts.component';
+import { userGuard } from './guards/user.guard';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -25,9 +27,11 @@ export const routes: Routes = [
             }
         ]
     },
-    { path: 'login', component: LoginComponent },
-    { path: 'register', component: RegisterComponent },
+    { path: 'login', component: LoginComponent, canActivate: [userGuard] },
+    { path: 'register', component: RegisterComponent, canActivate: [userGuard] },
     { path: 'profile', component: UserProfileComponent, canActivate: [authGuard] },
     { path: 'about', component: AboutComponent },
-    { path: 'contacts', component: ContactsComponent }
+    { path: 'contacts', component: ContactsComponent },
+    { path: '**', redirectTo: 'error' },
+    { path: 'error', component: ErrorPageComponent }
 ];

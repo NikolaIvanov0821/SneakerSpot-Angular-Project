@@ -18,7 +18,7 @@ export class LoginComponent {
     ])
   })
 
-  constructor(private userService:UserService, private router: Router) {}
+  constructor(private userService: UserService, private router: Router) { }
 
   isFieldTextMissing(controlName: string) {
     return (
@@ -32,12 +32,12 @@ export class LoginComponent {
       return;
     }
 
-    const {email, password} = this.form.value;
+    const { email, password } = this.form.value;
 
     this.userService.login(email!, password!).subscribe((res) => {
       console.log(res);
       localStorage.setItem('user', JSON.stringify(res))
       this.router.navigate(['/home'])
-    })
+    });
   }
 }

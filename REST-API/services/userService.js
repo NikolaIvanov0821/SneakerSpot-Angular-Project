@@ -18,14 +18,15 @@ const userService = {
     },
     async login(email, password) {
         const user = await User.findOne({email});
+        console.log(user);
 
         if (!user) {
-            throw new Error('Invalid user of password');
+            throw new Error('Invalid user or password');
         }
 
         const isValid = bcrypt.compare(password, user.password);
         if (!isValid) {
-            throw new Error('Invalid user of password');
+            throw new Error('Invalid user or password');
         }
 
         return generateResponse(user);
