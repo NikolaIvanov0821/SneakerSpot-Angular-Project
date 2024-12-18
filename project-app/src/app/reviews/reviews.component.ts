@@ -38,13 +38,21 @@ export class ReviewsComponent implements OnInit {
 
   ngOnInit(): void {
     this.productId = this.route.snapshot.params['productId'];
-    this.reviewsService.getReviews().subscribe((data) => {
-      data.map((review) => {
-        if(review.productId === this.productId) {
-          this.reviews.push(review)
-        }
-      } )
-    })
+    // this.reviewsService.getReviews().subscribe((data) => {
+    //   data.map((review) => {
+    //     if(review.productId === this.productId) {
+    //       this.reviews.push(review)
+    //     }
+    //   } )
+    // })
+
+    // Subscribe to the shared reviews observable
+    this.reviewsService.reviews$.subscribe((reviews) => {
+      this.reviews = reviews.filter(review => review.productId === this.productId);
+    });
+
+    // Initial fetch of reviews
+    this.reviewsService.getReviews().subscribe();
   }
 
   get isLoggedIn(): boolean {
@@ -73,7 +81,7 @@ export class ReviewsComponent implements OnInit {
 
     const productReviewResponse = await this.reviewsService.postReview(review).toPromise();
     console.log(productReviewResponse);
-    
+
     // this.api.postReview(username!, userId!, title!, productName!, productId!, rating!, comment!).subscribe((data) => console.log(data));
     // this.userService.addReview(username!, userId!, title!, productName!, productId!, rating!, comment!).subscribe((data) => console.log(data));
 

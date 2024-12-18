@@ -71,12 +71,6 @@ export class RegisterComponent {
       passGroup: { password, rePassword } = {}
     } = this.form.value;
 
-    // this.userService.register(username!, phone!, email!, password!, rePassword!).subscribe((res) => {
-    //   console.log(res);
-    //   localStorage.setItem('user', JSON.stringify(res))
-    //   this.router.navigate(['/home']);
-    // })
-
     this.userService.register(username!, phone!, email!, password!, rePassword!).subscribe({
       next: (res) => {
         localStorage.setItem('user', JSON.stringify(res));

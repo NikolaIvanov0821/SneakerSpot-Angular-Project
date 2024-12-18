@@ -38,12 +38,6 @@ export class LoginComponent {
 
     const { email, password } = this.form.value;
 
-    // this.userService.login(email!, password!).subscribe((res) => {
-    //   console.log(res);
-    //   localStorage.setItem('user', JSON.stringify(res))
-    //   this.router.navigate(['/home'])
-    // });
-
     this.userService.login(email!, password!).subscribe({
       next: (res) => {
         localStorage.setItem('user', JSON.stringify(res));

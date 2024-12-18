@@ -39,13 +39,11 @@ export class UserProfileComponent implements OnInit {
       this.user = data;
     });
 
-    this.reviewsService.getReviews().subscribe((data) => {
-      data.map(review => {
-        if (review.userId === userId) {
-          this.reviews.push(review)
-        }
-      })
+    this.reviewsService.reviews$.subscribe((reviews) => {
+      this.reviews = reviews.filter(review => review.userId === userId);
     });
+  
+    this.reviewsService.getReviews().subscribe();
   }
 
   get isLoggedIn(): boolean {
