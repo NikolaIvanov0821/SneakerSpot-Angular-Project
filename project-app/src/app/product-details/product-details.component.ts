@@ -43,7 +43,7 @@ export class ProductDetailsComponent implements OnInit, OnDestroy {
       ]
     });
 
-    this.isLikedFunction()
+    this.isLikedFunction();
   }
 
   selectImage(index: number): void {
@@ -86,16 +86,16 @@ export class ProductDetailsComponent implements OnInit, OnDestroy {
   }
 
   like() {
-    this.api.getLikes(this.productId).subscribe((data) => console.log(data))
+    this.api.getLikes(this.productId).subscribe((data) => console.log(data));
 
     const user = JSON.parse(localStorage.getItem('user')!);
     const userId = user._id;
 
     this.api.likeProduct(this.productId, userId).subscribe((updatedLikes) => {
       console.log(updatedLikes);
-    })
+    });
     this.userService.likeProduct(userId, this.productId).subscribe((liked) => console.log(liked));
-    this.isLiked = true
+    this.isLikedFunction();
   }
 
   unlike() {
@@ -103,11 +103,8 @@ export class ProductDetailsComponent implements OnInit, OnDestroy {
     const userId = user._id;
 
     this.api.unlikeProduct(this.productId, userId).subscribe((data) => console.log(data));
-    this.isLiked = false
-  }
-
-  postReview() {
-
+    this.userService.unlikeProduct(this.productId, userId).subscribe((data) => console.log(data));
+    this.isLikedFunction();
   }
 
   ngOnDestroy(): void {

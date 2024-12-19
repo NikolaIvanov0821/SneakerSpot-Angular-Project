@@ -74,6 +74,12 @@ export class UserService implements OnDestroy {
     return result;
   }
 
+  unlikeProduct(userId: string, productId: string) {
+    const url = enviroment.apiUrl;
+    const result = this.http.post(url + `/users/${userId}/liked`, { userId, productId });
+    return result;
+  }
+
   ngOnDestroy(): void {
     this.userSubscription?.unsubscribe();
   }

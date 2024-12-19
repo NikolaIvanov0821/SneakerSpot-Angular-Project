@@ -57,8 +57,9 @@
         <h2>All Reviews</h2>
         @for (review of reviews; track $index) {
         <div class="review-item">
-            <h3>{{ review.title }} - {{ review.username }}</h3>
-            <p>{{ review.comment }}</p>
+            <h4>{{review.title}}</h4>
+            <p class="review-meta">⭐⭐⭐⭐⭐ {{review.rating}}/5 <span>{{review.username}}</span></p>
+            <p class="review-text">{{review.comment}}</p>
         </div>
         }
     </div>

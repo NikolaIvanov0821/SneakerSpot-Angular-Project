@@ -102,3 +102,39 @@
     font-size: 0.9rem;
     margin-bottom: 10px;
 }
+
+.review-meta {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.review-meta span {
+    font-weight: bold;
+    color: #555;
+}
+
+.review {
+    border-top: 1px solid #ddd;
+    padding: 15px 0;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+h4 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.review-text {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.5;
+}
+
+.review-meta .rating {
+    color: #ffcc00;
+}
